@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Frage</key>
+			<string>Wie groß ist der Umfang des Jupiter?</string>
+			<key>Antworten</key>
+			<array>
+				<string>15.329 km</string>
+				<string>21.344 km</string>
+				<string>38.025 km</string>
+				<string>40.075 km</string>
+				<string>155.600 km</string>
+				<string>160.590 km</string>
+				<string>378.675 km</string>
+				<string>439.264 km</string>
+				<string>4.379.000 km</string>
+			</array>
+			<key>richtig</key>
+			<integer>7</integer>
+		</dict>
+		<dict>
+			<key>Frage</key>
+			<string>Wie groß ist der Umfang des Neptun?</string>
+			<key>Antworten</key>
+			<array>
+				<string>15.329 km</string>
+				<string>21.344 km</string>
+				<string>38.025 km</string>
+				<string>40.075 km</string>
+				<string>155.600 km</string>
+				<string>160.590 km</string>
+				<string>378.675 km</string>
+				<string>439.264 km</string>
+				<string>4.379.000 km</string>
+			</array>
+			<key>richtig</key>
+			<integer>4</integer>
+		</dict>
+		<dict>
+			<key>Frage</key>
+			<string>Wie groß ist der Umfang des Mars?</string>
+			<key>Antworten</key>
+			<array>
+				<string>15.329 km</string>
+				<string>21.344 km</string>
+				<string>38.025 km</string>
+				<string>40.075 km</string>
+				<string>155.600 km</string>
+				<string>160.590 km</string>
+				<string>378.675 km</string>
+				<string>439.264 km</string>
+				<string>4.379.000 km</string>
+			</array>
+			<key>richtig</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>Frage</key>
+			<string>Wie groß ist der Umfang des Uranus?</string>
+			<key>Antworten</key>
+			<array>
+				<string>15.329 km</string>
+				<string>21.344 km</string>
+				<string>38.025 km</string>
+				<string>40.075 km</string>
+				<string>155.600 km</string>
+				<string>160.590 km</string>
+				<string>378.675 km</string>
+				<string>439.264 km</string>
+				<string>4.379.000 km</string>
+			</array>
+			<key>richtig</key>
+			<integer>5</integer>
+		</dict>
+		<dict>
+			<key>Frage</key>
+			<string>Wie groß ist der Umfang des Merkur?</string>
+			<key>Antworten</key>
+			<array>
+				<string>15.329 km</string>
+				<string>21.344 km</string>
+				<string>38.025 km</string>
+				<string>40.075 km</string>
+				<string>155.600 km</string>
+				<string>160.590 km</string>
+				<string>378.675 km</string>
+				<string>439.264 km</string>
+				<string>4.379.000 km</string>
+			</array>
+			<key>richtig</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Frage</key>
+			<string>Wie groß ist der Umfang des Saturn?</string>
+			<key>Antworten</key>
+			<array>
+				<string>15.329 km</string>
+				<string>21.344 km</string>
+				<string>38.025 km</string>
+				<string>40.075 km</string>
+				<string>155.600 km</string>
+				<string>160.590 km</string>
+				<string>378.675 km</string>
+				<string>439.264 km</string>
+				<string>4.379.000 km</string>
+			</array>
+			<key>richtig</key>
+			<integer>6</integer>
+		</dict>
+		<dict>
+			<key>Frage</key>
+			<string>Wie groß ist der Umfang der Sonne?</string>
+			<key>Antworten</key>
+			<array>
+				<string>15.329 km</string>
+				<string>21.344 km</string>
+				<string>38.025 km</string>
+				<string>40.075 km</string>
+				<string>155.600 km</string>
+				<string>160.590 km</string>
+				<string>378.675 km</string>
+				<string>439.264 km</string>
+				<string>4.379.000 km</string>
+			</array>
+			<key>richtig</key>
+			<integer>8</integer>
+		</dict>
+		<dict>
+			<key>Frage</key>
+			<string>Wie groß ist der Umfang der Erde?</string>
+			<key>Antworten</key>
+			<array>
+				<string>15.329 km</string>
+				<string>21.344 km</string>
+				<string>38.025 km</string>
+				<string>40.075 km</string>
+				<string>155.600 km</string>
+				<string>160.590 km</string>
+				<string>378.675 km</string>
+				<string>439.264 km</string>
+				<string>4.379.000 km</string>
+			</array>
+			<key>richtig</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>Frage</key>
+			<string>Wie groß ist der Umfang der Venus?</string>
+			<key>Antworten</key>
+			<array>
+				<string>15.329 km</string>
+				<string>21.344 km</string>
+				<string>38.025 km</string>
+				<string>40.075 km</string>
+				<string>155.600 km</string>
+				<string>160.590 km</string>
+				<string>378.675 km</string>
+				<string>439.264 km</string>
+				<string>4.379.000 km</string>
+			</array>
+			<key>richtig</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

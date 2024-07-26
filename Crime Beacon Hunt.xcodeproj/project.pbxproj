@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4439D3BF2C240B5700337789 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4439D3BE2C240B5700337789 /* AppDelegate.swift */; };
+		4439D3C12C240B5700337789 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4439D3C02C240B5700337789 /* SceneDelegate.swift */; };
+		4439D3C32C240B5700337789 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4439D3C22C240B5700337789 /* ViewController.swift */; };
+		4439D3C62C240B5700337789 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4439D3C52C240B5700337789 /* Base */; };
+		4439D3CB2C240B5800337789 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4439D3CA2C240B5800337789 /* Base */; };
+		445F60DA2C240F2000E3FF55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445F60D92C240F2000E3FF55 /* Assets.xcassets */; };
+		4475D0B02C35AD2E00194979 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4475D0AF2C35AD2D00194979 /* MPCManager.swift */; };
+		4475D0B22C35AD3500194979 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4475D0B12C35AD3500194979 /* Wrapper.swift */; };
+		4475D0B42C35D42C00194979 /* UIImage+Squared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4475D0B32C35D42C00194979 /* UIImage+Squared.swift */; };
+		449DA98A2C2C32960030B940 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 449DA9892C2C32960030B940 /* Data.plist */; };
+		449DA98C2C2C34490030B940 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DA98B2C2C34490030B940 /* QuestionViewController.swift */; };
+		449DA98E2C2C40150030B940 /* QuestionButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DA98D2C2C40150030B940 /* QuestionButtonViewController.swift */; };
+		44D0DF762C24276D00B077AD /* HuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0DF752C24276D00B077AD /* HuntViewController.swift */; };
+		44D0DF782C24327E00B077AD /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0DF772C24327D00B077AD /* BeaconManager.swift */; };
+		44EA3FCF2C241E3F00A01709 /* RangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EA3FCE2C241E3F00A01709 /* RangeView.swift */; };
+		44FA125C2C2D7D8D00CA455E /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA125B2C2D7D8D00CA455E /* FinishViewController.swift */; };
+		44FA125E2C2D7DB500CA455E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA125D2C2D7DB500CA455E /* PhotoViewController.swift */; };
+		F07AED122C49196D005BFD42 /* BeaconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07AED112C49196D005BFD42 /* BeaconVC.swift */; };
+		F07AED142C492651005BFD42 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07AED132C492651005BFD42 /* MainVC.swift */; };
+		F08D25732C526CC4001F0D06 /* InvestigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D25722C526CC4001F0D06 /* InvestigationVC.swift */; };
+		F08D25752C53AD06001F0D06 /* Indizien.plist in Resources */ = {isa = PBXBuildFile; fileRef = F08D25742C53AD05001F0D06 /* Indizien.plist */; };
+		F08D25772C53AD12001F0D06 /* Beacons.plist in Resources */ = {isa = PBXBuildFile; fileRef = F08D25762C53AD12001F0D06 /* Beacons.plist */; };
+		F08D257B2C53AF96001F0D06 /* Orte.plist in Resources */ = {isa = PBXBuildFile; fileRef = F08D257A2C53AF96001F0D06 /* Orte.plist */; };
+		F08D257D2C53B2E8001F0D06 /* IndizienVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D257C2C53B2E8001F0D06 /* IndizienVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4439D3BB2C240B5700337789 /* Crime Beacon Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crime Beacon Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4439D3BE2C240B5700337789 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4439D3C02C240B5700337789 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4439D3C22C240B5700337789 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4439D3C52C240B5700337789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4439D3CA2C240B5800337789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4439D3CC2C240B5800337789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		445F60D92C240F2000E3FF55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4475D0AF2C35AD2D00194979 /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
+		4475D0B12C35AD3500194979 /* Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
+		4475D0B32C35D42C00194979 /* UIImage+Squared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Squared.swift"; sourceTree = "<group>"; };
+		449DA9892C2C32960030B940 /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		449DA98B2C2C34490030B940 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		449DA98D2C2C40150030B940 /* QuestionButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionButtonViewController.swift; sourceTree = "<group>"; };
+		44D0DF752C24276D00B077AD /* HuntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntViewController.swift; sourceTree = "<group>"; };
+		44D0DF772C24327D00B077AD /* BeaconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
+		44EA3FCE2C241E3F00A01709 /* RangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeView.swift; sourceTree = "<group>"; };
+		44FA125B2C2D7D8D00CA455E /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
+		44FA125D2C2D7DB500CA455E /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		F07AED112C49196D005BFD42 /* BeaconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconVC.swift; sourceTree = "<group>"; };
+		F07AED132C492651005BFD42 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		F08D25722C526CC4001F0D06 /* InvestigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestigationVC.swift; sourceTree = "<group>"; };
+		F08D25742C53AD05001F0D06 /* Indizien.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Indizien.plist; sourceTree = "<group>"; };
+		F08D25762C53AD12001F0D06 /* Beacons.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Beacons.plist; sourceTree = "<group>"; };
+		F08D257A2C53AF96001F0D06 /* Orte.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Orte.plist; sourceTree = "<group>"; };
+		F08D257C2C53B2E8001F0D06 /* IndizienVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndizienVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4439D3B82C240B5700337789 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4439D3B22C240B5700337789 = {
+			isa = PBXGroup;
+			children = (
+				4439D3BD2C240B5700337789 /* Crime Beacon Hunt */,
+				4439D3BC2C240B5700337789 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4439D3BC2C240B5700337789 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4439D3BB2C240B5700337789 /* Crime Beacon Hunt.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4439D3BD2C240B5700337789 /* Crime Beacon Hunt */ = {
+			isa = PBXGroup;
+			children = (
+				445F60D92C240F2000E3FF55 /* Assets.xcassets */,
+				449DA9892C2C32960030B940 /* Data.plist */,
+				4439D3BE2C240B5700337789 /* AppDelegate.swift */,
+				4439D3C02C240B5700337789 /* SceneDelegate.swift */,
+				4439D3C22C240B5700337789 /* ViewController.swift */,
+				F07AED132C492651005BFD42 /* MainVC.swift */,
+				44D0DF752C24276D00B077AD /* HuntViewController.swift */,
+				449DA98B2C2C34490030B940 /* QuestionViewController.swift */,
+				449DA98D2C2C40150030B940 /* QuestionButtonViewController.swift */,
+				44FA125B2C2D7D8D00CA455E /* FinishViewController.swift */,
+				44FA125D2C2D7DB500CA455E /* PhotoViewController.swift */,
+				4475D0AE2C35AD1300194979 /* BLE Communication */,
+				44EA3FCD2C241E0900A01709 /* Classes and Structs */,
+				4439D3C42C240B5700337789 /* Main.storyboard */,
+				4439D3C92C240B5800337789 /* LaunchScreen.storyboard */,
+				4439D3CC2C240B5800337789 /* Info.plist */,
+				F07AED112C49196D005BFD42 /* BeaconVC.swift */,
+				F08D25722C526CC4001F0D06 /* InvestigationVC.swift */,
+				F08D257C2C53B2E8001F0D06 /* IndizienVC.swift */,
+				F08D25742C53AD05001F0D06 /* Indizien.plist */,
+				F08D25762C53AD12001F0D06 /* Beacons.plist */,
+				F08D257A2C53AF96001F0D06 /* Orte.plist */,
+			);
+			path = "Crime Beacon Hunt";
+			sourceTree = "<group>";
+		};
+		4475D0AE2C35AD1300194979 /* BLE Communication */ = {
+			isa = PBXGroup;
+			children = (
+				4475D0AF2C35AD2D00194979 /* MPCManager.swift */,
+				44D0DF772C24327D00B077AD /* BeaconManager.swift */,
+			);
+			path = "BLE Communication";
+			sourceTree = "<group>";
+		};
+		44EA3FCD2C241E0900A01709 /* Classes and Structs */ = {
+			isa = PBXGroup;
+			children = (
+				4475D0B12C35AD3500194979 /* Wrapper.swift */,
+				44EA3FCE2C241E3F00A01709 /* RangeView.swift */,
+				4475D0B32C35D42C00194979 /* UIImage+Squared.swift */,
+			);
+			path = "Classes and Structs";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4439D3BA2C240B5700337789 /* Crime Beacon Hunt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4439D3CF2C240B5800337789 /* Build configuration list for PBXNativeTarget "Crime Beacon Hunt" */;
+			buildPhases = (
+				4439D3B72C240B5700337789 /* Sources */,
+				4439D3B82C240B5700337789 /* Frameworks */,
+				4439D3B92C240B5700337789 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Crime Beacon Hunt";
+			productName = "Universe Hunt";
+			productReference = 4439D3BB2C240B5700337789 /* Crime Beacon Hunt.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4439D3B32C240B5700337789 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					4439D3BA2C240B5700337789 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 4439D3B62C240B5700337789 /* Build configuration list for PBXProject "Crime Beacon Hunt" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4439D3B22C240B5700337789;
+			productRefGroup = 4439D3BC2C240B5700337789 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4439D3BA2C240B5700337789 /* Crime Beacon Hunt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4439D3B92C240B5700337789 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4439D3CB2C240B5800337789 /* Base in Resources */,
+				F08D25752C53AD06001F0D06 /* Indizien.plist in Resources */,
+				F08D25772C53AD12001F0D06 /* Beacons.plist in Resources */,
+				445F60DA2C240F2000E3FF55 /* Assets.xcassets in Resources */,
+				449DA98A2C2C32960030B940 /* Data.plist in Resources */,
+				4439D3C62C240B5700337789 /* Base in Resources */,
+				F08D257B2C53AF96001F0D06 /* Orte.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4439D3B72C240B5700337789 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F07AED142C492651005BFD42 /* MainVC.swift in Sources */,
+				449DA98E2C2C40150030B940 /* QuestionButtonViewController.swift in Sources */,
+				4439D3C32C240B5700337789 /* ViewController.swift in Sources */,
+				44D0DF762C24276D00B077AD /* HuntViewController.swift in Sources */,
+				449DA98C2C2C34490030B940 /* QuestionViewController.swift in Sources */,
+				4475D0B02C35AD2E00194979 /* MPCManager.swift in Sources */,
+				4475D0B42C35D42C00194979 /* UIImage+Squared.swift in Sources */,
+				4439D3BF2C240B5700337789 /* AppDelegate.swift in Sources */,
+				44D0DF782C24327E00B077AD /* BeaconManager.swift in Sources */,
+				F07AED122C49196D005BFD42 /* BeaconVC.swift in Sources */,
+				44FA125E2C2D7DB500CA455E /* PhotoViewController.swift in Sources */,
+				44EA3FCF2C241E3F00A01709 /* RangeView.swift in Sources */,
+				4475D0B22C35AD3500194979 /* Wrapper.swift in Sources */,
+				F08D25732C526CC4001F0D06 /* InvestigationVC.swift in Sources */,
+				F08D257D2C53B2E8001F0D06 /* IndizienVC.swift in Sources */,
+				4439D3C12C240B5700337789 /* SceneDelegate.swift in Sources */,
+				44FA125C2C2D7D8D00CA455E /* FinishViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4439D3C42C240B5700337789 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4439D3C52C240B5700337789 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4439D3C92C240B5800337789 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4439D3CA2C240B5800337789 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4439D3CD2C240B5800337789 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4439D3CE2C240B5800337789 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4439D3D02C240B5800337789 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2V36Z7VYJG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Crime Beacon Hunt/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Crime Beacon Hunt needs broadcast as a Beacon itself.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to make a picture of your team!";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We need access to the local network to connect to other devices using Multipeer Connectivity.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Crime Beacon Hunt needs to know where you are.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "one.appstudio.Crime-Beacon-Hunt";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4439D3D12C240B5800337789 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2V36Z7VYJG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Crime Beacon Hunt/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Crime Beacon Hunt needs broadcast as a Beacon itself.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to make a picture of your team!";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We need access to the local network to connect to other devices using Multipeer Connectivity.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Crime Beacon Hunt needs to know where you are.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "one.appstudio.Crime-Beacon-Hunt";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4439D3B62C240B5700337789 /* Build configuration list for PBXProject "Crime Beacon Hunt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4439D3CD2C240B5800337789 /* Debug */,
+				4439D3CE2C240B5800337789 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4439D3CF2C240B5800337789 /* Build configuration list for PBXNativeTarget "Crime Beacon Hunt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4439D3D02C240B5800337789 /* Debug */,
+				4439D3D12C240B5800337789 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4439D3B32C240B5700337789 /* Project object */;
+}
