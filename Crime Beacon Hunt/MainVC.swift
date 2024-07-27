@@ -29,6 +29,8 @@ class MainVC: UIViewController {
     var answers = [QuizAnswer]() // empty array
     var presentedQuizNo = 0
     
+    var orte: [Ort]? // optional array of questions, not existent at start
+    
     // Get to hold the FinishVC
     weak var delegate: CloseDelegate? // required to close multiple VC
     
@@ -52,6 +54,26 @@ class MainVC: UIViewController {
              */
             
             self.questions = questions
+        } else {
+            fatalError("Could NOT load Content Dictionary!")
+        }
+        
+        // 3.) load orte from file Orte
+        if let orte = loadOrteFromPlist() {
+                    
+            // uncomment to check loaded data in log
+            /*
+                for ort in orte {
+                print("OrtID: \(ort.ortID)")
+                print("Name: \(ort.name)")
+                print("Picture: \(ort.picture)")
+                print("QuizNo: \(ort.quizNo)")
+                print("Indizien: \(ort.indizien)")
+                print("BeaconMajor: \(ort.beaconMajor)")
+                print("BeaconMinor: \(ort.beaconMinor)")
+                }
+             */
+            self.orte = orte.shuffled()
         } else {
             fatalError("Could NOT load Content Dictionary!")
         }
@@ -240,6 +262,41 @@ class MainVC: UIViewController {
             return questions
         } else {
             debugPrint("Could NOT read questions")
+            return nil
+        }
+    }
+    
+    // Loading data from Data.plist file
+    func loadOrteFromPlist() -> [Ort]? {
+            
+        // make sure data is loaded properly
+        guard let url = Bundle.main.url(forResource: "Orte", withExtension: "plist"),
+                let dict = NSDictionary(contentsOf: url) as? [String:Any] else {
+            return nil
+        }
+            
+        // Our XML structure is build with a array at topmost level
+        if let array = dict["Orte"] as? Array<Dictionary<String, Any>> {
+            var orte = [Ort]()
+                
+            // this array holds dictionaries
+            for dict in array {
+                    
+                // TODO: IMPORTANT if any of these will fail, loading will fail completely
+                if let ortID = dict["ortID"] as? Int,
+                    let name = dict["name"] as? String,
+                    let picture = dict["picture"] as? String,
+                    let quizNo = dict["quizNo"] as? Int,
+                    let indizien = dict["indizien"] as? [String],
+                    let beaconMajor = dict["beaconMajor"] as? Int,
+                    let beaconMinor = dict["beaconMinor"] as? Int {
+                    let ort = Ort(ortID: ortID, name: name, picture: picture, quizNo: quizNo, indizien: indizien, beaconMajor: beaconMajor, beaconMinor: beaconMinor)
+                    orte.append(ort)
+                }
+            }
+            return orte
+        } else {
+            debugPrint("Could NOT read orte")
             return nil
         }
     }

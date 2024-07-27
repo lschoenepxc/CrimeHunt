@@ -27,8 +27,6 @@
 		F07AED122C49196D005BFD42 /* BeaconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07AED112C49196D005BFD42 /* BeaconVC.swift */; };
 		F07AED142C492651005BFD42 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07AED132C492651005BFD42 /* MainVC.swift */; };
 		F08D25732C526CC4001F0D06 /* InvestigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D25722C526CC4001F0D06 /* InvestigationVC.swift */; };
-		F08D25752C53AD06001F0D06 /* Indizien.plist in Resources */ = {isa = PBXBuildFile; fileRef = F08D25742C53AD05001F0D06 /* Indizien.plist */; };
-		F08D25772C53AD12001F0D06 /* Beacons.plist in Resources */ = {isa = PBXBuildFile; fileRef = F08D25762C53AD12001F0D06 /* Beacons.plist */; };
 		F08D257B2C53AF96001F0D06 /* Orte.plist in Resources */ = {isa = PBXBuildFile; fileRef = F08D257A2C53AF96001F0D06 /* Orte.plist */; };
 		F08D257D2C53B2E8001F0D06 /* IndizienVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D257C2C53B2E8001F0D06 /* IndizienVC.swift */; };
 /* End PBXBuildFile section */
@@ -56,8 +54,6 @@
 		F07AED112C49196D005BFD42 /* BeaconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconVC.swift; sourceTree = "<group>"; };
 		F07AED132C492651005BFD42 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		F08D25722C526CC4001F0D06 /* InvestigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestigationVC.swift; sourceTree = "<group>"; };
-		F08D25742C53AD05001F0D06 /* Indizien.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Indizien.plist; sourceTree = "<group>"; };
-		F08D25762C53AD12001F0D06 /* Beacons.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Beacons.plist; sourceTree = "<group>"; };
 		F08D257A2C53AF96001F0D06 /* Orte.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Orte.plist; sourceTree = "<group>"; };
 		F08D257C2C53B2E8001F0D06 /* IndizienVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndizienVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +90,7 @@
 			children = (
 				445F60D92C240F2000E3FF55 /* Assets.xcassets */,
 				449DA9892C2C32960030B940 /* Data.plist */,
+				F08D257A2C53AF96001F0D06 /* Orte.plist */,
 				4439D3BE2C240B5700337789 /* AppDelegate.swift */,
 				4439D3C02C240B5700337789 /* SceneDelegate.swift */,
 				4439D3C22C240B5700337789 /* ViewController.swift */,
@@ -111,9 +108,6 @@
 				F07AED112C49196D005BFD42 /* BeaconVC.swift */,
 				F08D25722C526CC4001F0D06 /* InvestigationVC.swift */,
 				F08D257C2C53B2E8001F0D06 /* IndizienVC.swift */,
-				F08D25742C53AD05001F0D06 /* Indizien.plist */,
-				F08D25762C53AD12001F0D06 /* Beacons.plist */,
-				F08D257A2C53AF96001F0D06 /* Orte.plist */,
 			);
 			path = "Crime Beacon Hunt";
 			sourceTree = "<group>";
@@ -196,8 +190,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4439D3CB2C240B5800337789 /* Base in Resources */,
-				F08D25752C53AD06001F0D06 /* Indizien.plist in Resources */,
-				F08D25772C53AD12001F0D06 /* Beacons.plist in Resources */,
 				445F60DA2C240F2000E3FF55 /* Assets.xcassets in Resources */,
 				449DA98A2C2C32960030B940 /* Data.plist in Resources */,
 				4439D3C62C240B5700337789 /* Base in Resources */,

@@ -37,10 +37,20 @@ struct QuizAnswer {
     let quizTime: Int // seconds for a single quiz
 }
 
+struct Ort {
+    let ortID: Int
+    let name: String
+    let picture: String
+    let quizNo: Int
+    let indizien: [String]
+    let beaconMajor: Int
+    let beaconMinor: Int
+}
+
 // MARK: - Wrapping Game Data
 // wrapper format, suitable for all Hunts
 struct GameMessage {
-    var app: String = "Universe Hunt" // distinguish the data for showing all on one screen at AppleTV
+    var app: String = "Crime Beacon Hunt" // distinguish the data for showing all on one screen at AppleTV
     let teamName: String // name of person/team
     let score: Int // result of person/team
     let image: UIImage // image of person/team

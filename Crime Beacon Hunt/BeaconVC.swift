@@ -19,10 +19,14 @@ class BeaconVC: MainVC {
     
     var fullscreen = false
     
+    var numberOfPages = 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        numberOfPages = orte!.count
+        
         lowRange.layer.masksToBounds = true
         mediumRange.layer.masksToBounds = true
         nearRange.layer.masksToBounds = true
@@ -37,7 +41,9 @@ class BeaconVC: MainVC {
         scrollViewBeacon.delegate = self // ViewController should take care if user scrolls (delegation)
         setupScrollView() // once at startup: setup content (better programmatically)
         // 2.) pageControl
-        pageControlBeacon.numberOfPages = 3  // number of pages
+        // pageControlBeacon.numberOfPages = 3  // number of pages
+        // the following line does add an action programmatically
+        pageControlBeacon.numberOfPages = numberOfPages  // number of pages
         // the following line does add an action programmatically
         pageControlBeacon.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
     }
@@ -59,8 +65,9 @@ class BeaconVC: MainVC {
     */
     
     func setupScrollView() {
-        let numberOfPages = 3  // amount of content inside the scrollView = pageControl !
-        for i in 0..<numberOfPages {
+        // let numberOfPages = 3  // amount of content inside the scrollView = pageControl !
+        let numberOfPagesScroll = numberOfPages  // amount of content inside the scrollView = pageControl !
+        for i in 0..<numberOfPagesScroll {
             let page = UIImageView()
             let number = i + 1 // because i starts with 0
             page.image = UIImage(named: "Explanation\(number)") // images in assets e.g. Explanation1
