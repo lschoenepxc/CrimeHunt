@@ -19,6 +19,7 @@ class BeaconVC: MainVC {
     
     var fullscreen = false
     
+    // default for number of Pages for Places of Beacons
     var numberOfPages = 3
     
     override func viewDidLoad() {
@@ -70,7 +71,8 @@ class BeaconVC: MainVC {
         for i in 0..<numberOfPagesScroll {
             let page = UIImageView()
             let number = i + 1 // because i starts with 0
-            page.image = UIImage(named: "Explanation\(number)") // images in assets e.g. Explanation1
+            // page.image = UIImage(named: "Explanation\(number)") // images in assets e.g. Explanation1
+            page.image = UIImage(named: orte![i].picture) // images in assets for the places of the beacons (randomized)
             
             // 4 values x/y: top corner left (origin) | width | height)
             // width & height equal scrollView
@@ -78,6 +80,15 @@ class BeaconVC: MainVC {
             page.isUserInteractionEnabled = true
             let tap = UITapGestureRecognizer(target: self, action: #selector(fullscreenImage))
             page.addGestureRecognizer(tap)
+            // let labelPlaceName = UILabel()
+            let labelPlaceName = VerticalAlignedLabel()
+            labelPlaceName.textColor = .black
+            //labelPlaceName.textAlignment = .center
+            labelPlaceName.contentMode = .bottom
+            labelPlaceName.font = .systemFont(ofSize: 20, weight: .medium)
+            labelPlaceName.text = orte![i].name
+            labelPlaceName.frame = page.bounds
+            page.addSubview(labelPlaceName)
             scrollViewBeacon.addSubview(page)
         }
         // we need to setup the ContentSize (3 pages side by side)

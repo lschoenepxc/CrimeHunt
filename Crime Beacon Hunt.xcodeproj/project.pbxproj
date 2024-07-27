@@ -29,6 +29,7 @@
 		F08D25732C526CC4001F0D06 /* InvestigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D25722C526CC4001F0D06 /* InvestigationVC.swift */; };
 		F08D257B2C53AF96001F0D06 /* Orte.plist in Resources */ = {isa = PBXBuildFile; fileRef = F08D257A2C53AF96001F0D06 /* Orte.plist */; };
 		F08D257D2C53B2E8001F0D06 /* IndizienVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D257C2C53B2E8001F0D06 /* IndizienVC.swift */; };
+		F0B504D42C55900C00DADB5E /* VerticalAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B504D32C55900C00DADB5E /* VerticalAlignedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		F08D25722C526CC4001F0D06 /* InvestigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestigationVC.swift; sourceTree = "<group>"; };
 		F08D257A2C53AF96001F0D06 /* Orte.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Orte.plist; sourceTree = "<group>"; };
 		F08D257C2C53B2E8001F0D06 /* IndizienVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndizienVC.swift; sourceTree = "<group>"; };
+		F0B504D32C55900C00DADB5E /* VerticalAlignedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalAlignedLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				F07AED112C49196D005BFD42 /* BeaconVC.swift */,
 				F08D25722C526CC4001F0D06 /* InvestigationVC.swift */,
 				F08D257C2C53B2E8001F0D06 /* IndizienVC.swift */,
+				F0B504D32C55900C00DADB5E /* VerticalAlignedLabel.swift */,
 			);
 			path = "Crime Beacon Hunt";
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				F07AED142C492651005BFD42 /* MainVC.swift in Sources */,
 				449DA98E2C2C40150030B940 /* QuestionButtonViewController.swift in Sources */,
 				4439D3C32C240B5700337789 /* ViewController.swift in Sources */,
+				F0B504D42C55900C00DADB5E /* VerticalAlignedLabel.swift in Sources */,
 				44D0DF762C24276D00B077AD /* HuntViewController.swift in Sources */,
 				449DA98C2C2C34490030B940 /* QuestionViewController.swift in Sources */,
 				4475D0B02C35AD2E00194979 /* MPCManager.swift in Sources */,
