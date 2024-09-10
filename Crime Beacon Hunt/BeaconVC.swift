@@ -22,6 +22,14 @@ class BeaconVC: MainVC {
     // default for number of Pages for Places of Beacons
     var numberOfPages = 3
     
+    var pages = [UIImageView()]
+    
+    // MARK: - Properties
+    // Beacon
+    private var beaconManager: BeaconManager! // Model for specialized tasks
+    var isScanning = false // Boolean flag indicating which process we're currently in
+    var beaconRanges = [0, 0, 0] // Keeps track of each beacons (3) ranges (immediate, near, far)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +55,18 @@ class BeaconVC: MainVC {
         pageControlBeacon.numberOfPages = numberOfPages  // number of pages
         // the following line does add an action programmatically
         pageControlBeacon.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
+        
+        beaconManager = BeaconManager(
+            beaconUUID: UUID(uuidString: "ACFD065E-C3C0-11E3-9BBE-1A514932AC01")!, // equal for all 3
+            major: 1,
+            // minor: UInt16 = 25090 // S/N 01/025090 (1)
+            // minor: UInt16 = 21788 // S/N 01/021788 (2)
+            // minor: UInt16 = 21788 // S/N 01/025088 (3)
+            minorArray: [25090, 21788, 25088], // differentiate via minor value
+            identifier: "de.th-owl.fb2.id_beacon" // we might need to distinguish
+        )
+        
+        beaconManager.delegate = self
     }
     
 
@@ -70,9 +90,11 @@ class BeaconVC: MainVC {
         let numberOfPagesScroll = numberOfPages  // amount of content inside the scrollView = pageControl !
         for i in 0..<numberOfPagesScroll {
             let page = UIImageView()
-            let number = i + 1 // because i starts with 0
+            // let number = i + 1 // because i starts with 0
             // page.image = UIImage(named: "Explanation\(number)") // images in assets e.g. Explanation1
-            page.image = UIImage(named: orte![i].picture) // images in assets for the places of the beacons (randomized)
+            // set placeholder image
+            // page.image = UIImage(named: orte![i].picture) // images in assets for the places of the beacons (randomized)
+            page.image = UIImage(named: "placeholder")
             
             // 4 values x/y: top corner left (origin) | width | height)
             // width & height equal scrollView
@@ -89,6 +111,7 @@ class BeaconVC: MainVC {
             labelPlaceName.text = orte![i].name
             labelPlaceName.frame = page.bounds
             page.addSubview(labelPlaceName)
+            pages.append(page)
             scrollViewBeacon.addSubview(page)
         }
         // we need to setup the ContentSize (3 pages side by side)
@@ -114,6 +137,43 @@ class BeaconVC: MainVC {
             fullscreen = true
         }
     }
+    
+    override func updateBeaconScrollView() {
+        super.updateBeaconScrollView()
+        print("override")
+        for subview in scrollViewBeacon.subviews {
+            if let label = subview as? UILabel {
+                label.text = "Label aktualisiert"
+            }
+            if let imageView = subview as? UIImageView {
+                imageView.image = UIImage(named: orte![currentIndex].picture)
+            }
+        }
+    }
+    
+    // MARK: - UI Update Helper
+    
+    // change color regarding range of a specific beacon
+    func updateBeaconView(beacon: Int, range: Int) {
+        
+        // switch between beacons, each beacon got 3 views for the ranges
+        // print("range: \(range)") // 0 unknown | 1 immediate | 2 near | 3 far
+        //let color: UIColor
+        //switch range {
+        //case 1: color = .red
+        //case 2: color = .orange
+        //case 3: color = .yellow
+        //default: color = .black
+        //}
+        
+        //if range > 0 {
+         //   let rangeViewNumber = range - 1 // left immediate | middle near | right far
+            //beaconViews![rangeViewNumber].backgroundColor = color
+         //   beaconRanges[beacon] = range // keep track which range has been solved so far
+            // keep track of the button here
+            //beaconViews![rangeViewNumber].button.isHidden = false
+       // }
+    }
 }
 
 extension BeaconVC: UIScrollViewDelegate {
@@ -135,3 +195,20 @@ extension BeaconVC: UIScrollViewDelegate {
     }
     
 }
+
+// MARK: - BeaconManagerDelegate
+
+extension BeaconVC: BeaconManagerDelegate {
+    func displayAuthorizationStatus(isEnabled: Bool?) {
+        // do this in HuntViewController
+    }
+    
+    // MARK: Update Beacon Range
+    
+    // BeaconManager reports an update on beacon and/or range
+    func didUpdateBeaconRange(beacon: Int, range: Int) {
+        // We change the corresponding view
+        updateBeaconView(beacon: beacon, range: range)
+    }
+}
+

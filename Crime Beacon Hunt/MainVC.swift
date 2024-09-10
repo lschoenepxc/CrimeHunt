@@ -29,6 +29,9 @@ class MainVC: UIViewController {
     var answers = [QuizAnswer]() // empty array
     var presentedQuizNo = 0
     
+    // keep track of current index for orte and quiz questions (both shuffled lists)
+    var currentIndex = 0
+    
     var orte: [Ort]? // optional array of orte, not existent at start
     
     // Get to hold the FinishVC
@@ -53,7 +56,7 @@ class MainVC: UIViewController {
              }
              */
             
-            self.questions = questions
+            self.questions = questions.shuffled()
         } else {
             fatalError("Could NOT load Content Dictionary!")
         }
@@ -86,7 +89,8 @@ class MainVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let no = presentedQuizNo // has been set with quiz button tag beforehand
+        // let no = presentedQuizNo // has been set with quiz button tag beforehand
+        let no = currentIndex
         
         // MARK: Send Quiz to any QuestionVC
         if let destinationVC = segue.destination as? QuestionViewController {
@@ -131,13 +135,27 @@ class MainVC: UIViewController {
         storeResult(answer: answer)
     }
     
-    private func storeResult(answer: QuizAnswer?) {
+    func storeResult(answer: QuizAnswer?) {
         
-        // decide: do we allow to answer a quiz a second time?
-        let index = presentedQuizNo - 1 // remember: this comes from button tag 1-9
-
-        // reset for next quiz
-        presentedQuizNo = 0
+        if let storeAnswer = answer { // answer given
+            
+            // store result
+            answers.append(storeAnswer)
+            
+        } else { // no answer given: surrendered
+            // do nothing
+        }
+        
+        // count up the current Index
+        currentIndex = currentIndex + 1
+        print(currentIndex)
+        
+        updateBeaconScrollView()
+    }
+    
+    // override in BeaconVC
+    func updateBeaconScrollView() {
+        print("Trying to override")
     }
     
     // TODO: calculate your score
@@ -147,7 +165,8 @@ class MainVC: UIViewController {
         
         for answer in answers {
             
-            let quizNo = answer.quizNo - 1 // adjust to index 0 of array
+            //let quizNo = answer.quizNo - 1 // adjust to index 0 of array
+            let quizNo = answer.quizNo
             
             guard let correctIndex = questions?[quizNo].correctAnswerIndex else {
                 print("Nil data - please check questions no: \(answer.quizNo)")
@@ -156,7 +175,7 @@ class MainVC: UIViewController {
             let correct = answer.answerIndex == correctIndex - 1 // adjust to index 0 of array
             
             print("Calculate Score Question: \(answer.quizNo)")
-            print("Correct Answer: \(correctIndex) Selected Answer\(answer.answerIndex)")
+            print("Correct Answer: \(correctIndex) Selected Answer \(answer.answerIndex)")
             
             if correct {
                 if answer.quizTime <= 15 {

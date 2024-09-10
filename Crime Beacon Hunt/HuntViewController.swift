@@ -71,37 +71,6 @@ class HuntViewController: MainVC {
         // this viewController closes itself
         dismiss(animated: true, completion: nil)
     }
-    
-    // MARK: - UI Update Helper
-    
-    // change color regarding range of a specific beacon
-    func updateBeaconView(beacon: Int, range: Int) {
-        
-        // each beacon got 3 views for the ranges
-        // print("range: \(range)") // 0 unknown | 1 immediate | 2 near | 3 far
-        //let color: UIColor
-        //switch range {
-        //case 1: color = .red
-        //case 2: color = .orange
-        //case 3: color = .yellow
-        //default: color = .black
-        //}
-        
-        // differentiate between 3 beacons
-        // print("beacon: \(beacon)")
-        var beaconViews: [RangeView]?
-        
-        guard beaconViews != nil else { return }
-        
-        if range > 0 {
-            let rangeViewNumber = range - 1 // left immediate | middle near | right far
-            //beaconViews![rangeViewNumber].backgroundColor = color
-            beaconRanges[beacon] = range // keep track which range has been solved so far
-            // keep track of the button here
-            //beaconViews![rangeViewNumber].button.isHidden = false
-        }
-    }
-    
 }
 
 // MARK: - BeaconManagerDelegate
@@ -134,6 +103,7 @@ extension HuntViewController: BeaconManagerDelegate {
     // BeaconManager reports an update on beacon and/or range
     func didUpdateBeaconRange(beacon: Int, range: Int) {
         // We change the corresponding view
-        updateBeaconView(beacon: beacon, range: range)
+        // do the update in BeaconVC
+        //updateBeaconView(beacon: beacon, range: range)
     }
 }
