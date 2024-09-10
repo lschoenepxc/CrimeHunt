@@ -44,42 +44,42 @@ class MainVC: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        // 2.) load questions from file Data
-        if let questions = loadQuestionsFromPlist() {
+            // 2.) load questions from file Data
+            if let questions = loadQuestionsFromPlist() {
+                
+                // uncomment to check loaded data in log
+                /*
+                 for question in questions {
+                 print("Frage: \(question.question)")
+                 print("Antworten: \(question.answers)")
+                 print("Richtig: \(question.correctAnswerIndex)")
+                 }
+                 */
+                
+                self.questions = questions
+            } else {
+                fatalError("Could NOT load Content Dictionary!")
+            }
             
-            // uncomment to check loaded data in log
-            /*
-             for question in questions {
-             print("Frage: \(question.question)")
-             print("Antworten: \(question.answers)")
-             print("Richtig: \(question.correctAnswerIndex)")
-             }
-             */
-            
-            self.questions = questions.shuffled()
-        } else {
-            fatalError("Could NOT load Content Dictionary!")
-        }
-        
-        // 3.) load orte from file Orte
-        if let orte = loadOrteFromPlist() {
-                    
-            // uncomment to check loaded data in log
-            /*
-                for ort in orte {
-                print("OrtID: \(ort.ortID)")
-                print("Name: \(ort.name)")
-                print("Picture: \(ort.picture)")
-                print("QuizNo: \(ort.quizNo)")
-                print("Indizien: \(ort.indizien)")
-                print("BeaconMajor: \(ort.beaconMajor)")
-                print("BeaconMinor: \(ort.beaconMinor)")
-                }
-             */
-            self.orte = orte.shuffled()
-        } else {
-            fatalError("Could NOT load Content Dictionary!")
-        }
+            // 3.) load orte from file Orte
+            if let orte = loadOrteFromPlist() {
+                
+                // uncomment to check loaded data in log
+                /*
+                 for ort in orte {
+                 print("OrtID: \(ort.ortID)")
+                 print("Name: \(ort.name)")
+                 print("Picture: \(ort.picture)")
+                 print("QuizNo: \(ort.quizNo)")
+                 print("Indizien: \(ort.indizien)")
+                 print("BeaconMajor: \(ort.beaconMajor)")
+                 print("BeaconMinor: \(ort.beaconMinor)")
+                 }
+                 */
+                self.orte = orte
+            } else {
+                fatalError("Could NOT load Content Dictionary!")
+            }
     }
     
     // MARK: - Start/Stop
@@ -150,13 +150,44 @@ class MainVC: UIViewController {
         currentIndex = currentIndex + 1
         print(currentIndex)
         
-        updateBeaconScrollView()
+        var beaconScrollView = UIScrollView()
+        var beaconPageControl = UIPageControl()
+        // find scrollview in beaconView
+        for subview in beaconView.subviews[0].subviews {
+            if let scrollView = subview as? UIScrollView {
+                beaconScrollView = scrollView
+            }
+            if let pageControl = subview as? UIPageControl {
+                beaconPageControl = pageControl
+            }
+        }
+        // scroll to right scrollviewpage
+        if (currentIndex < orte!.count){
+            var frame: CGRect = beaconScrollView.frame
+            frame.origin.x = frame.size.width * CGFloat(currentIndex)
+            frame.origin.y = 0
+            beaconScrollView.scrollRectToVisible(frame, animated: true)
+            beaconPageControl.currentPage = currentIndex
+        }
+        for subview in beaconScrollView.subviews {
+            if let imageView = subview as? UIImageView {
+                if (imageView.layer.name == "page\(currentIndex)"){
+                    if (currentIndex < orte!.count){
+                        imageView.image = UIImage(named: orte![currentIndex].picture)
+                    }
+                }
+                if (imageView.layer.name == "page\(currentIndex-1)"){
+                    for imageSubview in imageView.subviews {
+                        if let label = imageSubview as? VerticalAlignedLabel {
+                            label.text = orte![currentIndex-1].name
+                            print("found label")
+                        }
+                    }
+                }
+            }
+        }
     }
     
-    // override in BeaconVC
-    func updateBeaconScrollView() {
-        print("Trying to override")
-    }
     
     // TODO: calculate your score
     func calculateScore() -> Int {

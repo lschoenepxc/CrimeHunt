@@ -69,7 +69,6 @@ class BeaconVC: MainVC {
         beaconManager.delegate = self
     }
     
-
     @IBAction func quizButton(_ sender: UIButton) {
         print("Pressed Rätsel Button")
         presentedQuizNo = 1
@@ -88,13 +87,24 @@ class BeaconVC: MainVC {
     func setupScrollView() {
         // let numberOfPages = 3  // amount of content inside the scrollView = pageControl !
         let numberOfPagesScroll = numberOfPages  // amount of content inside the scrollView = pageControl !
+        
+        // flag to only show picture of first scrollview
+        var flag = true
         for i in 0..<numberOfPagesScroll {
             let page = UIImageView()
+            page.layer.name = "page\(i)"
             // let number = i + 1 // because i starts with 0
             // page.image = UIImage(named: "Explanation\(number)") // images in assets e.g. Explanation1
-            // set placeholder image
-            // page.image = UIImage(named: orte![i].picture) // images in assets for the places of the beacons (randomized)
-            page.image = UIImage(named: "placeholder")
+            
+            // set placeholder image for alle but the first scrollview
+            if flag {
+                page.image = UIImage(named: orte![i].picture) // images in assets for the places of the beacons (randomized)
+                flag = false
+                print(orte![i].picture)
+            }
+            else {
+                page.image = UIImage(named: "placeholder")
+            }
             
             // 4 values x/y: top corner left (origin) | width | height)
             // width & height equal scrollView
@@ -108,7 +118,8 @@ class BeaconVC: MainVC {
             //labelPlaceName.textAlignment = .center
             labelPlaceName.contentMode = .bottom
             labelPlaceName.font = .systemFont(ofSize: 20, weight: .medium)
-            labelPlaceName.text = orte![i].name
+            //labelPlaceName.text = orte![i].name
+            labelPlaceName.text = ""
             labelPlaceName.frame = page.bounds
             page.addSubview(labelPlaceName)
             pages.append(page)
@@ -135,19 +146,6 @@ class BeaconVC: MainVC {
             newImageView.addGestureRecognizer(tap)
             self.view.addSubview(newImageView)
             fullscreen = true
-        }
-    }
-    
-    override func updateBeaconScrollView() {
-        super.updateBeaconScrollView()
-        print("override")
-        for subview in scrollViewBeacon.subviews {
-            if let label = subview as? UILabel {
-                label.text = "Label aktualisiert"
-            }
-            if let imageView = subview as? UIImageView {
-                imageView.image = UIImage(named: orte![currentIndex].picture)
-            }
         }
     }
     
