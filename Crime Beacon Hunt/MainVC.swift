@@ -29,7 +29,7 @@ class MainVC: UIViewController {
     var answers = [QuizAnswer]() // empty array
     var presentedQuizNo = 0
     
-    var orte: [Ort]? // optional array of questions, not existent at start
+    var orte: [Ort]? // optional array of orte, not existent at start
     
     // Get to hold the FinishVC
     weak var delegate: CloseDelegate? // required to close multiple VC
@@ -135,12 +135,7 @@ class MainVC: UIViewController {
         
         // decide: do we allow to answer a quiz a second time?
         let index = presentedQuizNo - 1 // remember: this comes from button tag 1-9
-        let rangeView: RangeView?
-        
-        // MARK: 3 x 3 RangeViews must be reached
-        // You might find a better solution
-        
-        
+
         // reset for next quiz
         presentedQuizNo = 0
     }
@@ -305,8 +300,6 @@ class MainVC: UIViewController {
     
     
 }
-
-// MARK: - BeaconManagerDelegate
 
 // MARK: - CloseDelegate
 

@@ -21,7 +21,6 @@
 		449DA98E2C2C40150030B940 /* QuestionButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DA98D2C2C40150030B940 /* QuestionButtonViewController.swift */; };
 		44D0DF762C24276D00B077AD /* HuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0DF752C24276D00B077AD /* HuntViewController.swift */; };
 		44D0DF782C24327E00B077AD /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0DF772C24327D00B077AD /* BeaconManager.swift */; };
-		44EA3FCF2C241E3F00A01709 /* RangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EA3FCE2C241E3F00A01709 /* RangeView.swift */; };
 		44FA125C2C2D7D8D00CA455E /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA125B2C2D7D8D00CA455E /* FinishViewController.swift */; };
 		44FA125E2C2D7DB500CA455E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA125D2C2D7DB500CA455E /* PhotoViewController.swift */; };
 		F07AED122C49196D005BFD42 /* BeaconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07AED112C49196D005BFD42 /* BeaconVC.swift */; };
@@ -49,7 +48,6 @@
 		449DA98D2C2C40150030B940 /* QuestionButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionButtonViewController.swift; sourceTree = "<group>"; };
 		44D0DF752C24276D00B077AD /* HuntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntViewController.swift; sourceTree = "<group>"; };
 		44D0DF772C24327D00B077AD /* BeaconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
-		44EA3FCE2C241E3F00A01709 /* RangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeView.swift; sourceTree = "<group>"; };
 		44FA125B2C2D7D8D00CA455E /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		44FA125D2C2D7DB500CA455E /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		F07AED112C49196D005BFD42 /* BeaconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconVC.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				4475D0B12C35AD3500194979 /* Wrapper.swift */,
-				44EA3FCE2C241E3F00A01709 /* RangeView.swift */,
 				4475D0B32C35D42C00194979 /* UIImage+Squared.swift */,
 			);
 			path = "Classes and Structs";
@@ -219,7 +216,6 @@
 				44D0DF782C24327E00B077AD /* BeaconManager.swift in Sources */,
 				F07AED122C49196D005BFD42 /* BeaconVC.swift in Sources */,
 				44FA125E2C2D7DB500CA455E /* PhotoViewController.swift in Sources */,
-				44EA3FCF2C241E3F00A01709 /* RangeView.swift in Sources */,
 				4475D0B22C35AD3500194979 /* Wrapper.swift in Sources */,
 				F08D25732C526CC4001F0D06 /* InvestigationVC.swift in Sources */,
 				F08D257D2C53B2E8001F0D06 /* IndizienVC.swift in Sources */,
