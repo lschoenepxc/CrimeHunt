@@ -30,6 +30,25 @@ class IndizienVC: UIViewController {
         // Do any additional setup after loading the view.
         tableViewIndizien.delegate = self
         tableViewIndizien.dataSource = self
+        
+        // Erstelle den Balken-View
+        let indicatorBar = UIView()
+        indicatorBar.backgroundColor = UIColor.systemGray4
+        indicatorBar.layer.cornerRadius = 2.5
+            
+        // Setze die Abmessungen des Balkens
+        indicatorBar.translatesAutoresizingMaskIntoConstraints = false
+        indicatorBar.heightAnchor.constraint(equalToConstant: 5).isActive = true
+        indicatorBar.widthAnchor.constraint(equalToConstant: 80).isActive = true
+            
+        // Füge den Balken zum View Controller hinzu
+        self.view.addSubview(indicatorBar)
+            
+        // Setze die Position in der Mitte des oberen Randes des View Controllers
+        NSLayoutConstraint.activate([
+            indicatorBar.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 8),
+            indicatorBar.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
     }
     
 

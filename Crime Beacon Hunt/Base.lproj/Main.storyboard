@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Universe_Hunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Crime_Beacon_Hunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
         <!--Hunt View Controller-->
         <scene sceneID="WyR-TB-K17">
             <objects>
-                <viewController id="k6X-Ya-1eq" customClass="HuntViewController" customModule="Universe_Hunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k6X-Ya-1eq" customClass="HuntViewController" customModule="Crime_Beacon_Hunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ASj-vq-Qo0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,12 +200,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiP-iu-6ar" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="691" y="-15"/>
+            <point key="canvasLocation" x="691" y="-23"/>
         </scene>
         <!--IndizienView-->
         <scene sceneID="hEP-KG-3e6">
             <objects>
-                <viewController title="IndizienView" id="ayh-eg-YZQ" customClass="QuestionButtonViewController" customModule="Universe_Hunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="IndizienView" id="ayh-eg-YZQ" customClass="QuestionButtonViewController" customModule="Crime_Beacon_Hunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iA9-SZ-h5D">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -341,7 +341,7 @@
         <!--Finish View Controller-->
         <scene sceneID="q58-Hg-1y6">
             <objects>
-                <viewController id="WMm-sY-Hd1" customClass="FinishViewController" customModule="Universe_Hunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WMm-sY-Hd1" customClass="FinishViewController" customModule="Crime_Beacon_Hunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="huo-go-MEN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -462,7 +462,7 @@
         <!--Photo View Controller-->
         <scene sceneID="Z9a-xq-V4n">
             <objects>
-                <viewController id="e2r-od-Bfl" customClass="PhotoViewController" customModule="Universe_Hunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e2r-od-Bfl" customClass="PhotoViewController" customModule="Crime_Beacon_Hunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H3d-fY-0KN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -560,7 +560,7 @@
         <!--BeaconView-->
         <scene sceneID="dEI-pX-mnU">
             <objects>
-                <viewController title="BeaconView" id="0yx-7O-lJz" customClass="BeaconVC" customModule="Universe_Hunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BeaconView" id="0yx-7O-lJz" customClass="BeaconVC" customModule="Crime_Beacon_Hunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gdm-Vs-Vmc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="557"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -683,7 +683,7 @@
         <!--InvestigationView-->
         <scene sceneID="bAJ-8E-Jyg">
             <objects>
-                <viewController title="InvestigationView" id="fnj-Qh-PDb" customClass="InvestigationVC" customModule="Universe_Hunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="InvestigationView" id="fnj-Qh-PDb" customClass="InvestigationVC" customModule="Crime_Beacon_Hunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UOk-yU-2MM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="557"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -781,7 +781,7 @@
         <!--IndizienView-->
         <scene sceneID="cfi-OU-yYG">
             <objects>
-                <viewController title="IndizienView" id="bnS-zI-Drj" customClass="IndizienVC" customModule="Universe_Hunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="IndizienView" id="bnS-zI-Drj" customClass="IndizienVC" customModule="Crime_Beacon_Hunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GSd-Uq-Sg4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -836,7 +836,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sS-fw-sFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1658.7786259541983" y="-23.239436619718312"/>
+            <point key="canvasLocation" x="1659" y="-23"/>
         </scene>
     </scenes>
     <color key="tintColor" name="AccentColor"/>
