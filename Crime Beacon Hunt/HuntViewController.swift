@@ -17,7 +17,7 @@ class HuntViewController: MainVC {
     // Beacon
     private var beaconManager: BeaconManager! // Model for specialized tasks
     var isScanning = false // Boolean flag indicating which process we're currently in
-    var beaconRanges = [0, 0, 0] // Keeps track of each beacons (3) ranges (immediate, near, far)
+    //var beaconRanges = [0, 0, 0] // Keeps track of each beacons (3) ranges (immediate, near, far)
     
     // MARK: - Life Cycle
     
@@ -32,7 +32,7 @@ class HuntViewController: MainVC {
             // minor: UInt16 = 25090 // S/N 01/025090 (1)
             // minor: UInt16 = 21788 // S/N 01/021788 (2)
             // minor: UInt16 = 21788 // S/N 01/025088 (3)
-            minorArray: [25090, 21788, 25088], // differentiate via minor value
+            minorArray: minorArray, // differentiate via minor value
             identifier: "de.th-owl.fb2.id_beacon" // we might need to distinguish
         )
         beaconManager.delegate = self // Tell the manager whom to report

@@ -372,7 +372,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2V36Z7VYJG;
+				DEVELOPMENT_TEAM = Z5D6XDJ382;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Crime Beacon Hunt/Info.plist";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Crime Beacon Hunt needs broadcast as a Beacon itself.";
@@ -404,7 +404,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2V36Z7VYJG;
+				DEVELOPMENT_TEAM = Z5D6XDJ382;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Crime Beacon Hunt/Info.plist";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Crime Beacon Hunt needs broadcast as a Beacon itself.";

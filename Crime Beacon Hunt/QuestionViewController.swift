@@ -85,7 +85,7 @@ class QuestionViewController: UIViewController {
         
         stopTimer()
         
-        if let presentingVC = self.presentingViewController as? HuntViewController {
+        if let presentingVC = self.presentingViewController as? MainVC {
             
             presentingVC.receiveResult(answer: nil) // send result to main VC
         }

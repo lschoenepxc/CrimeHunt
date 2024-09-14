@@ -22,7 +22,7 @@
 			<key>beaconMajor</key>
 			<integer>1</integer>
 			<key>beaconMinor</key>
-			<integer>25090</integer>
+			<integer>21788</integer>
 		</dict>
 		<dict>
 			<key>ortID</key>
@@ -42,7 +42,7 @@
 			<key>beaconMajor</key>
 			<integer>1</integer>
 			<key>beaconMinor</key>
-			<integer>21788</integer>
+			<integer>25090</integer>
 		</dict>
 		<dict>
 			<key>ortID</key>

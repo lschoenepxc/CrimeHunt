@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IndizienVC: UIViewController {
+class IndizienVC: MainVC {
     
     
     @IBOutlet weak var tableViewIndizien: UITableView!
@@ -22,10 +22,13 @@ class IndizienVC: UIViewController {
         "Etwas1", "Etwas2", "Etwas3"
     ]
     
-    let orteNamen = ["Küche", "WC", "Garten"]
+    var orteNamen = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        for ort in orte! {
+            orteNamen.append(ort.name)
+        }
 
         // Do any additional setup after loading the view.
         tableViewIndizien.delegate = self

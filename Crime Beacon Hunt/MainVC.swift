@@ -7,6 +7,8 @@
 
 import UIKit
 
+var currentIndex = 0
+
 class MainVC: UIViewController {
     
     // MARK: - UI Properties
@@ -30,9 +32,10 @@ class MainVC: UIViewController {
     var presentedQuizNo = 0
     
     // keep track of current index for orte and quiz questions (both shuffled lists)
-    var currentIndex = 0
+    // var currentIndex = 0
     
     var orte: [Ort]? // optional array of orte, not existent at start
+    var minorArray = [UInt16]()
     
     // Get to hold the FinishVC
     weak var delegate: CloseDelegate? // required to close multiple VC
@@ -80,6 +83,10 @@ class MainVC: UIViewController {
             } else {
                 fatalError("Could NOT load Content Dictionary!")
             }
+        for ort in self.orte! {
+            self.minorArray.append(UInt16(ort.beaconMinor))
+        }
+        print(self.minorArray)
     }
     
     // MARK: - Start/Stop
@@ -130,6 +137,11 @@ class MainVC: UIViewController {
         } else {
             print("Player surrendered QUIZ No \(presentedQuizNo)")
         }
+        for child in self.children {
+            if let beaconVC = child as? BeaconVC {
+                beaconVC.beaconManager.startScanning()
+            }
+        }
         
         // put into a seprate function for clarity
         storeResult(answer: answer)
@@ -160,6 +172,9 @@ class MainVC: UIViewController {
             if let pageControl = subview as? UIPageControl {
                 beaconPageControl = pageControl
             }
+            if let subQuizButton = subview as? UIButton {
+                subQuizButton.isEnabled = false
+            }
         }
         // scroll to right scrollviewpage
         if (currentIndex < orte!.count){
@@ -180,7 +195,6 @@ class MainVC: UIViewController {
                     for imageSubview in imageView.subviews {
                         if let label = imageSubview as? VerticalAlignedLabel {
                             label.text = orte![currentIndex-1].name
-                            print("found label")
                         }
                     }
                 }

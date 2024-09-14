@@ -13,6 +13,7 @@ class BeaconVC: MainVC {
     @IBOutlet weak var mediumRange: UILabel!
     @IBOutlet weak var nearRange: UILabel!
     
+    @IBOutlet weak var quizButton: UIButton!
     
     @IBOutlet weak var pageControlBeacon: UIPageControl!
     @IBOutlet weak var scrollViewBeacon: UIScrollView!
@@ -26,12 +27,14 @@ class BeaconVC: MainVC {
     
     // MARK: - Properties
     // Beacon
-    private var beaconManager: BeaconManager! // Model for specialized tasks
+    var beaconManager: BeaconManager! // Model for specialized tasks
     var isScanning = false // Boolean flag indicating which process we're currently in
     var beaconRanges = [0, 0, 0] // Keeps track of each beacons (3) ranges (immediate, near, far)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        quizButton.isEnabled = false
 
         // Do any additional setup after loading the view.
         numberOfPages = orte!.count
@@ -62,16 +65,22 @@ class BeaconVC: MainVC {
             // minor: UInt16 = 25090 // S/N 01/025090 (1)
             // minor: UInt16 = 21788 // S/N 01/021788 (2)
             // minor: UInt16 = 21788 // S/N 01/025088 (3)
-            minorArray: [25090, 21788, 25088], // differentiate via minor value
+            minorArray: minorArray, // differentiate via minor value
             identifier: "de.th-owl.fb2.id_beacon" // we might need to distinguish
         )
         
         beaconManager.delegate = self
+        beaconManager.startScanning()
     }
     
     @IBAction func quizButton(_ sender: UIButton) {
         print("Pressed Rätsel Button")
-        presentedQuizNo = 1
+        beaconManager.stopScanning()
+        nearRange.backgroundColor = .darkGray
+        mediumRange.backgroundColor = .lightGray
+        lowRange.backgroundColor = .white
+        
+        //presentedQuizNo = 1
         self.parent?.performSegue(withIdentifier: "questionButtonSegue", sender: nil)
     }
     /*
@@ -153,24 +162,33 @@ class BeaconVC: MainVC {
     
     // change color regarding range of a specific beacon
     func updateBeaconView(beacon: Int, range: Int) {
-        
-        // switch between beacons, each beacon got 3 views for the ranges
-        // print("range: \(range)") // 0 unknown | 1 immediate | 2 near | 3 far
-        //let color: UIColor
-        //switch range {
-        //case 1: color = .red
-        //case 2: color = .orange
-        //case 3: color = .yellow
-        //default: color = .black
-        //}
-        
-        //if range > 0 {
-         //   let rangeViewNumber = range - 1 // left immediate | middle near | right far
-            //beaconViews![rangeViewNumber].backgroundColor = color
-         //   beaconRanges[beacon] = range // keep track which range has been solved so far
-            // keep track of the button here
-            //beaconViews![rangeViewNumber].button.isHidden = false
-       // }
+        print(currentIndex, beacon, range)
+        if (beacon == currentIndex) {
+            // 0 unknown | 1 immediate | 2 near | 3 far
+            switch range {
+            case 1:
+                lowRange.backgroundColor = .yellow
+                mediumRange.backgroundColor = .orange
+                nearRange.backgroundColor = .red
+                quizButton.isEnabled = true
+                //beaconRanges[currentIndex] = 1
+            case 2:
+                lowRange.backgroundColor = .yellow
+                mediumRange.backgroundColor = .orange
+                nearRange.backgroundColor = .darkGray
+                //beaconRanges[currentIndex] = 2
+            case 3:
+                lowRange.backgroundColor = .yellow
+                nearRange.backgroundColor = .darkGray
+                mediumRange.backgroundColor = .lightGray
+                //beaconRanges[currentIndex] = 3
+            default:
+                nearRange.backgroundColor = .darkGray
+                mediumRange.backgroundColor = .lightGray
+                lowRange.backgroundColor = .white
+                //beaconRanges[currentIndex] = 0
+            }
+        }
     }
 }
 

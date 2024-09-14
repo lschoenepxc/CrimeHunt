@@ -62,20 +62,6 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
             guard let minor = beacon.minor as? UInt16 else { continue }
             let beaconIndex = minorArray.firstIndex(of: minor) ?? -1
             if beaconIndex != -1 {
-                // var range: Int = 0
-                //        switch distance {
-                //        case .unknown:
-                //            range = 0
-                //            print("unknown status")
-                //        case .far:
-                //            range = 1
-                //        case .near:
-                //            range = 2
-                //        case .immediate:
-                //            range = 3
-                //        @unknown default: // provide a default value - additional cases probably added later
-                //            range = 0
-                //        }
                 delegate?.didUpdateBeaconRange(beacon: beaconIndex, range: beacon.proximity.rawValue)
             }
         }
