@@ -6,12 +6,11 @@
 //
 
 import UIKit
+import CoreImage
 
 class BeaconVC: MainVC {
     
     @IBOutlet weak var lowRange: UILabel!
-    @IBOutlet weak var mediumRange: UILabel!
-    @IBOutlet weak var nearRange: UILabel!
     
     @IBOutlet weak var quizButton: UIButton!
     
@@ -34,17 +33,13 @@ class BeaconVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        quizButton.isEnabled = false
+        //quizButton.isEnabled = false
 
         // Do any additional setup after loading the view.
         numberOfPages = orte!.count
         
         lowRange.layer.masksToBounds = true
-        mediumRange.layer.masksToBounds = true
-        nearRange.layer.masksToBounds = true
         lowRange.layer.cornerRadius = 5
-        mediumRange.layer.cornerRadius = 5
-        nearRange.layer.cornerRadius = 5
         
         // 1.) scrollView
         scrollViewBeacon.minimumZoomScale=1
@@ -76,8 +71,8 @@ class BeaconVC: MainVC {
     @IBAction func quizButton(_ sender: UIButton) {
         print("Pressed Rätsel Button")
         beaconManager.stopScanning()
-        nearRange.backgroundColor = .darkGray
-        mediumRange.backgroundColor = .lightGray
+        //nearRange.backgroundColor = .darkGray
+        //mediumRange.backgroundColor = .lightGray
         lowRange.backgroundColor = .white
         
         //presentedQuizNo = 1
@@ -102,34 +97,36 @@ class BeaconVC: MainVC {
         for i in 0..<numberOfPagesScroll {
             let page = UIImageView()
             page.layer.name = "page\(i)"
+            page.backgroundColor = .darkGray
             // let number = i + 1 // because i starts with 0
             // page.image = UIImage(named: "Explanation\(number)") // images in assets e.g. Explanation1
             
             // set placeholder image for alle but the first scrollview
             if flag {
-                page.image = UIImage(named: orte![i].picture) // images in assets for the places of the beacons (randomized)
+                page.image = UIImage(named: orte![i].picture) // images in assets for the places of the beacons
                 flag = false
-                print(orte![i].picture)
+                // print(orte![i].picture)
             }
             else {
-                page.image = UIImage(named: "placeholder")
+                if let image = UIImage(named: orte![i].picture) {  // Das Bild aus den Assets laden
+                            page.image = pixelateImage(image: image)
+                        }
+                //page.image = UIImage(named: "placeholder")
             }
             
             // 4 values x/y: top corner left (origin) | width | height)
             // width & height equal scrollView
             page.frame = CGRect(x: CGFloat(i) * scrollViewBeacon.frame.size.width, y: 0, width: scrollViewBeacon.frame.size.width, height: scrollViewBeacon.frame.size.height)
-            page.isUserInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: #selector(fullscreenImage))
-            page.addGestureRecognizer(tap)
             // let labelPlaceName = UILabel()
             let labelPlaceName = VerticalAlignedLabel()
-            labelPlaceName.textColor = .black
+            labelPlaceName.textColor = .white
             //labelPlaceName.textAlignment = .center
-            labelPlaceName.contentMode = .bottom
-            labelPlaceName.font = .systemFont(ofSize: 20, weight: .medium)
+            labelPlaceName.contentMode = .top
+            labelPlaceName.font = .systemFont(ofSize: 16, weight: .medium)
             //labelPlaceName.text = orte![i].name
             labelPlaceName.text = ""
             labelPlaceName.frame = page.bounds
+            
             page.addSubview(labelPlaceName)
             pages.append(page)
             scrollViewBeacon.addSubview(page)
@@ -139,24 +136,25 @@ class BeaconVC: MainVC {
         scrollViewBeacon.isPagingEnabled = true
     }
     
-    @objc func fullscreenImage(_ sender: UITapGestureRecognizer) {
-        if fullscreen {
-            sender.view?.removeFromSuperview()
-            fullscreen = false
+    // Funktion zum Verpixeln des Bildes
+        func pixelateImage(image: UIImage) -> UIImage? {
+            let inputImage = CIImage(image: image)  // UIImage in CIImage umwandeln
+            
+            // Einen CIFilter erstellen, um den Pixelate-Effekt anzuwenden
+            let filter = CIFilter(name: "CIPixellate")!
+            filter.setValue(inputImage, forKey: kCIInputImageKey)
+            
+            // Pixelgröße einstellen (Je höher der Wert, desto stärker die Verpixelung)
+            filter.setValue(50, forKey: kCIInputScaleKey)
+            
+            // Gefiltertes Bild erzeugen
+            let context = CIContext()
+            if let outputImage = filter.outputImage,
+               let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+                return UIImage(cgImage: cgImage)
+            }
+            return nil
         }
-        else {
-            let imageView = sender.view as! UIImageView
-            let newImageView = UIImageView(image: imageView.image)
-            newImageView.frame = UIScreen.main.bounds
-            newImageView.backgroundColor = .black
-            newImageView.contentMode = .scaleAspectFill
-            newImageView.isUserInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: #selector(fullscreenImage))
-            newImageView.addGestureRecognizer(tap)
-            self.view.addSubview(newImageView)
-            fullscreen = true
-        }
-    }
     
     // MARK: - UI Update Helper
     
@@ -167,26 +165,17 @@ class BeaconVC: MainVC {
             // 0 unknown | 1 immediate | 2 near | 3 far
             switch range {
             case 1:
-                lowRange.backgroundColor = .yellow
-                mediumRange.backgroundColor = .orange
-                nearRange.backgroundColor = .red
+                lowRange.backgroundColor = UIColor(named: "RangeGreen")
+                lowRange.text = "nah"
                 quizButton.isEnabled = true
-                //beaconRanges[currentIndex] = 1
             case 2:
-                lowRange.backgroundColor = .yellow
-                mediumRange.backgroundColor = .orange
-                nearRange.backgroundColor = .darkGray
-                //beaconRanges[currentIndex] = 2
+                lowRange.backgroundColor = UIColor(named: "RangeOrange")
+                lowRange.text = "näher"
             case 3:
-                lowRange.backgroundColor = .yellow
-                nearRange.backgroundColor = .darkGray
-                mediumRange.backgroundColor = .lightGray
-                //beaconRanges[currentIndex] = 3
+                lowRange.backgroundColor = UIColor(named: "RangeRed")
+                lowRange.text = "weit"
             default:
-                nearRange.backgroundColor = .darkGray
-                mediumRange.backgroundColor = .lightGray
                 lowRange.backgroundColor = .white
-                //beaconRanges[currentIndex] = 0
             }
         }
     }

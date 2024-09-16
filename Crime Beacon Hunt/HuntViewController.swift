@@ -11,7 +11,8 @@ class HuntViewController: MainVC {
     
     // MARK: - UI Properties
     
-    @IBOutlet weak var statusLabel: UILabel!
+    //@IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var HuntSegmentedControl: UISegmentedControl!
     
     // MARK: - Properties
     // Beacon
@@ -23,6 +24,12 @@ class HuntViewController: MainVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // selected option color
+        HuntSegmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+
+        // color of other options
+        HuntSegmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
         
         // Do any additional setup after loading the view.
         // 1.) Our specialized model is created
@@ -83,19 +90,19 @@ extension HuntViewController: BeaconManagerDelegate {
     func displayAuthorizationStatus(isEnabled: Bool?) {
         
         // We need to inform the user of the status of access
-        if let on = isEnabled {
+        //if let on = isEnabled {
             
-            if on {
-                statusLabel.text = "Location sharing enabled."
-            } else {
-                statusLabel.text = "Enable location sharing!"
-                print("NOT enabled")
-            }
+            //if on {
+                //statusLabel.text = "Location sharing enabled."
+            //} else {
+                //statusLabel.text = "Enable location sharing!"
+                //print("NOT enabled")
+            //}
             
-        } else { // not set, therefore unknown status
-            statusLabel.text = "Location sharing unclear!"
-            print("NOT set")
-        }
+        //} else { // not set, therefore unknown status
+            //statusLabel.text = "Location sharing unclear!"
+            //print("NOT set")
+        //}
     }
     
     // MARK: Update Beacon Range

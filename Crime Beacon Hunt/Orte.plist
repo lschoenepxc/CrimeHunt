@@ -10,7 +10,7 @@
 			<key>name</key>
 			<string>Mac-Raum</string>
 			<key>picture</key>
-			<string>Explanation1</string>
+			<string>Kamera</string>
 			<key>quizNo</key>
 			<integer>0</integer>
 			<key>indizien</key>
@@ -30,7 +30,7 @@
 			<key>name</key>
 			<string>Küche</string>
 			<key>picture</key>
-			<string>Explanation2</string>
+			<string>Kopfhörer</string>
 			<key>quizNo</key>
 			<integer>1</integer>
 			<key>indizien</key>
@@ -50,7 +50,7 @@
 			<key>name</key>
 			<string>Garten</string>
 			<key>picture</key>
-			<string>Explanation3</string>
+			<string>Schere</string>
 			<key>quizNo</key>
 			<integer>2</integer>
 			<key>indizien</key>

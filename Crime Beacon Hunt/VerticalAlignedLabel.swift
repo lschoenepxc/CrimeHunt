@@ -21,6 +21,8 @@ class VerticalAlignedLabel: UILabel {
             switch contentMode {
             case .top:
                 newRect.size.height = sizeThatFits(rect.size).height
+                newRect.origin.y = 10
+                newRect.origin.x = 10
             case .bottom:
                 let height = sizeThatFits(rect.size).height
                 newRect.origin.y += rect.size.height - height - 10

@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="CrimeBeaconLogo" translatesAutoresizingMaskIntoConstraints="NO" id="fc5-uq-Pwa">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo-Weiß" translatesAutoresizingMaskIntoConstraints="NO" id="fc5-uq-Pwa">
                                 <rect key="frame" x="132" y="362" width="128" height="128"/>
                             </imageView>
                         </subviews>
@@ -35,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CrimeBeaconLogo" width="993" height="941"/>
+        <image name="Logo-Weiß" width="3201" height="3200"/>
     </resources>
 </document>

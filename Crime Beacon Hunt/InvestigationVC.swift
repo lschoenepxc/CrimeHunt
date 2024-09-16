@@ -13,10 +13,19 @@ class InvestigationVC: UIViewController {
     @IBOutlet weak var scrollViewInvestigation: UIScrollView!
     @IBOutlet weak var pageControlInvestigation: UIPageControl!
     
+    @IBOutlet weak var InvestigationSegmentedControl: UISegmentedControl!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // selected option color
+        InvestigationSegmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+
+        // color of other options
+        InvestigationSegmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
         
         // 1.) scrollView
         scrollViewInvestigation.delegate = self // ViewController should take care if user scrolls (delegation)
@@ -44,6 +53,7 @@ class InvestigationVC: UIViewController {
             let page = UIImageView()
             let number = i + 1 // because i starts with 0
             page.layer.name = "Explanation \(number)"
+            page.backgroundColor = .darkGray
             page.image = UIImage(named: "Explanation\(number)") // images in assets e.g. Explanation1
             
             // 4 values x/y: top corner left (origin) | width | height)
@@ -72,6 +82,9 @@ class InvestigationVC: UIViewController {
         self.parent?.performSegue(withIdentifier: "indizienSegue", sender: nil)
     }
     
+    @IBAction func finishButtonClicked(_ sender: UIButton) {
+        self.parent?.performSegue(withIdentifier: "finishSegue", sender: nil)
+    }
     
 }
 

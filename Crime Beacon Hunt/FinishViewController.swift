@@ -101,7 +101,7 @@ class FinishViewController: UIViewController {
     // MARK: raw data from HuntVC
     func receiveGameData(timeString: String, seconds: Int, score: Int) {
         
-        print("FinishVC received GameData, time: \(timeString)")
+        print("FinishVC received GameData, time: \(timeString), score: \(score)")
         self.timeText = timeString // we use the string for simplicity, preventing calculating it again
         self.seconds = seconds
         self.score = score

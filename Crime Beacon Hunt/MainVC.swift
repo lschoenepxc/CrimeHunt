@@ -252,10 +252,11 @@ class MainVC: UIViewController {
         }
     }
     
-    @IBAction func finishButtonPressed(_ sender: Any) {
+    // moved to InvestigationVC
+    //@IBAction func finishButtonPressed(_ sender: Any) {
         // close this VC (data will be passed in func prepare(for segue…)
-        performSegue(withIdentifier: "finishSegue", sender: nil)
-    }
+        //performSegue(withIdentifier: "finishSegue", sender: nil)
+    //}
     
     // MARK: - Timer
     

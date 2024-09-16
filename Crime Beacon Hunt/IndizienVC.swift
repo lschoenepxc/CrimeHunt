@@ -12,6 +12,7 @@ class IndizienVC: MainVC {
     
     @IBOutlet weak var tableViewIndizien: UITableView!
     
+    
     let ort1 = [
         "Etwas1", "Etwas2", "Etwas3"
     ]
@@ -22,13 +23,29 @@ class IndizienVC: MainVC {
         "Etwas1", "Etwas2", "Etwas3"
     ]
     
+    var ortIndizien = [[String]]()
+    
     var orteNamen = [String]()
+    
+    var emptyFlag = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for ort in orte! {
-            orteNamen.append(ort.name)
+        
+        if (currentIndex > 1) {
+            let count = 0...currentIndex
+            for index in count {
+                orteNamen.append(orte![index].name)
+                ortIndizien.append(orte![index].indizien)
+                print(orteNamen)
+            }
+            emptyFlag = false
         }
+        
+        //for ort in orte! {
+        //    orteNamen.append(ort.name)
+        //    ortIndizien.append(ort.indizien)
+        //}
 
         // Do any additional setup after loading the view.
         tableViewIndizien.delegate = self
@@ -54,6 +71,19 @@ class IndizienVC: MainVC {
         ])
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Alert hier anzeigen
+        if emptyFlag {
+            let emptyMessageText = "Es sind noch keine Indizien freigespielt worden. Suche Beacons und löse Rätsel, um Indizien zu erhalten."
+            let emptyMessageTitle = "Noch keine Indizien freigespielt"
+            let emptyAlert = UIAlertController(title: emptyMessageTitle, message: emptyMessageText, preferredStyle: .alert)
+            emptyAlert.addAction(UIAlertAction(title: "Verstanden", style: .cancel, handler: nil))
+            present(emptyAlert, animated: true)
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -69,20 +99,21 @@ class IndizienVC: MainVC {
 
 extension IndizienVC : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return orteNamen.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return ort1.count
-        case 1:
-            return ort2.count
-        case 2:
-            return ort3.count
-        default:
-            return 0
-        }
+        //switch section {
+        //case 0:
+        //    return ort1.count
+        //case 1:
+        //    return ort2.count
+        //case 2:
+        //    return ort3.count
+        //default:
+        //    return 0
+        //}
+        return ortIndizien[section].count
     }
     
     //func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -110,16 +141,17 @@ extension IndizienVC : UITableViewDataSource {
         cell.textLabel?.textColor = .white
         cell.backgroundColor = .black
         
-        switch indexPath.section {
-        case 0:
-            cell.textLabel?.text = ort1[indexPath.row]
-        case 1:
-            cell.textLabel?.text = ort2[indexPath.row]
-        case 2:
-            cell.textLabel?.text = ort3[indexPath.row]
-        default:
-            cell.textLabel?.text = ""
-        }
+        //switch indexPath.section {
+        //case 0:
+        //    cell.textLabel?.text = ort1[indexPath.row]
+        //case 1:
+        //    cell.textLabel?.text = ort2[indexPath.row]
+        //case 2:
+        //    cell.textLabel?.text = ort3[indexPath.row]
+        //default:
+        //    cell.textLabel?.text = ""
+        //}
+        cell.textLabel?.text = ortIndizien[indexPath.section][indexPath.row]
         return cell
     }
 }
