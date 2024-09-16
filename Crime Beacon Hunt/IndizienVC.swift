@@ -27,19 +27,16 @@ class IndizienVC: MainVC {
     
     var orteNamen = [String]()
     
-    var emptyFlag = true
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (currentIndex > 1) {
-            let count = 0...currentIndex
+        if (currentIndex > 0) {
+            let count = 0...currentIndex-1
             for index in count {
                 orteNamen.append(orte![index].name)
                 ortIndizien.append(orte![index].indizien)
                 print(orteNamen)
             }
-            emptyFlag = false
         }
         
         //for ort in orte! {
@@ -75,7 +72,7 @@ class IndizienVC: MainVC {
         super.viewDidAppear(animated)
         
         // Alert hier anzeigen
-        if emptyFlag {
+        if (currentIndex < 1) {
             let emptyMessageText = "Es sind noch keine Indizien freigespielt worden. Suche Beacons und löse Rätsel, um Indizien zu erhalten."
             let emptyMessageTitle = "Noch keine Indizien freigespielt"
             let emptyAlert = UIAlertController(title: emptyMessageTitle, message: emptyMessageText, preferredStyle: .alert)
