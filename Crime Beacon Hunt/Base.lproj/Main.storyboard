@@ -659,11 +659,12 @@
                                 </constraints>
                                 <segments>
                                     <segment title="Verdächtige"/>
-                                    <segment title="Tatwaffe"/>
-                                    <segment title="Tatort"/>
+                                    <segment title="Tatwaffen"/>
+                                    <segment title="Tatorte"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" name="AccentColor"/>
                                 <connections>
+                                    <action selector="segmentChanged:" destination="fnj-Qh-PDb" eventType="valueChanged" id="6ue-Wv-YPF"/>
                                     <action selector="switchViews:" destination="k6X-Ya-1eq" eventType="valueChanged" id="3go-gP-Kor"/>
                                 </connections>
                             </segmentedControl>

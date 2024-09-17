@@ -47,7 +47,9 @@ class InvestigationVC: UIViewController {
         
         // 1.) scrollView
         scrollViewInvestigation.delegate = self // ViewController should take care if user scrolls (delegation)
-        setupScrollView() // once at startup: setup content (better programmatically)
+        //setupScrollView() // once at startup: setup content (better programmatically)
+        // Initial setup for suspects (index 0)
+        setupScrollView(for: 0)
         // 2.) pageControl
         pageControlInvestigation.numberOfPages = 5  // number of pages
         // the following line does add an action programmatically
@@ -65,27 +67,127 @@ class InvestigationVC: UIViewController {
     }
     */
     
-    func setupScrollView() {
-        let numberOfPages = 5  // amount of content inside the scrollView = pageControl !
-        for i in 0..<numberOfPages {
-            let page = UIImageView()
-            let number = i + 1 // because i starts with 0
-            page.layer.name = "Explanation \(number)"
-            page.backgroundColor = .darkGray
-            page.image = UIImage(named: akte!.verdaechtige[i].pic) // images in assets e.g. Explanation1
-            
-            // 4 values x/y: top corner left (origin) | width | height)
-            // width & height equal scrollView
-            page.frame = CGRect(x: CGFloat(i) * scrollViewInvestigation.frame.size.width, y: 0, width: scrollViewInvestigation.frame.size.width, height: scrollViewInvestigation.frame.size.height)
-            page.isUserInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: #selector(popupMessage))
-            page.addGestureRecognizer(tap)
-            scrollViewInvestigation.addSubview(page)
+    func setupScrollView(for selectedSegmentIndex: Int) {
+        // Remove any previous views from the scrollView
+        scrollViewInvestigation.subviews.forEach { $0.removeFromSuperview() }
+        
+        var numberOfPages = 0
+        var data: [Any] = []
+        
+        // Choose data source based on the selected segment
+        switch selectedSegmentIndex {
+        case 0: // Verdächtige
+            numberOfPages = akte?.verdaechtige.count ?? 0
+            data = akte?.verdaechtige ?? []
+        case 1: // Tatwaffen
+            numberOfPages = akte?.tatwaffen.count ?? 0
+            data = akte?.tatwaffen ?? []
+        case 2: // Tatorte
+            numberOfPages = akte?.tatorte.count ?? 0
+            data = akte?.tatorte ?? []
+        default:
+            break
         }
-        // we need to setup the ContentSize (3 pages side by side)
+        
+        // Build scrollView pages based on the selected data source
+        for i in 0..<numberOfPages {
+            // Container für jedes Element
+            let pageView = UIView()
+            pageView.frame = CGRect(x: CGFloat(i) * scrollViewInvestigation.frame.size.width, y: 0, width: scrollViewInvestigation.frame.size.width, height: scrollViewInvestigation.frame.size.height)
+            pageView.backgroundColor = .darkGray
+                    
+            // Bild
+            let imageView = UIImageView()
+            
+            // Info-Button (oben rechts)
+            let infoButton = UIButton(type: .infoLight)
+            infoButton.frame = CGRect(x: scrollViewInvestigation.frame.size.width - 50, y: 20, width: 30, height: 30)
+            
+            // Titel-Label
+            let titleLabel = UILabel()
+            
+            // Beschreibung-Label
+            let descriptionLabel = UILabel()
+            
+            // Handle different data types
+            if let verdaechtiger = data[i] as? Verdaechtiger {
+                imageView.image = UIImage(named: verdaechtiger.pic)
+                pageView.layer.name = verdaechtiger.name
+                titleLabel.text = verdaechtiger.name + " | " + verdaechtiger.job
+                descriptionLabel.text = "Mordmotiv - " + verdaechtiger.motiv
+                infoButton.layer.name = "verdaechtiger"
+            } else if let tatwaffe = data[i] as? Tatwaffe {
+                imageView.image = UIImage(named: tatwaffe.pic) // Assuming an image with weapon name exists
+                pageView.layer.name = tatwaffe.bezeichnung
+                titleLabel.text = tatwaffe.bezeichnung
+                descriptionLabel.text = "Mordmethode - " + tatwaffe.methode
+                infoButton.layer.name = "tatwaffe"
+            } else if let tatort = data[i] as? Tatort {
+                imageView.image = UIImage(named: tatort.pic) // Assuming an image with location name exists
+                pageView.layer.name = tatort.ort
+                titleLabel.text = tatort.ort
+                descriptionLabel.text = tatort.beschreibung
+                infoButton.layer.name = "tatort"
+            }
+            
+            imageView.frame = CGRect(x: 20, y: 20, width: scrollViewInvestigation.frame.size.width - 40, height: 200)
+            imageView.contentMode = .scaleAspectFit
+            pageView.addSubview(imageView)
+            
+            infoButton.tag = i
+            infoButton.addTarget(self, action: #selector(infoButtonTapped(_:)), for: .touchUpInside)
+            pageView.addSubview(infoButton)
+            
+            titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+            titleLabel.frame = CGRect(x: 20, y: imageView.frame.maxY + 10, width: scrollViewInvestigation.frame.size.width - 40, height: 25)
+            pageView.addSubview(titleLabel)
+            
+            descriptionLabel.font = UIFont.systemFont(ofSize: 14)
+            descriptionLabel.textColor = .gray
+            descriptionLabel.frame = CGRect(x: 20, y: titleLabel.frame.maxY + 5, width: scrollViewInvestigation.frame.size.width - 40, height: 20)
+            pageView.addSubview(descriptionLabel)
+            
+            // Ausschließen-Button
+            let excludeButton = UIButton(type: .system)
+            excludeButton.setTitle("Ausschließen", for: .normal)
+            excludeButton.backgroundColor = .red
+            excludeButton.setTitleColor(.white, for: .normal)
+            excludeButton.frame = CGRect(x: 20, y: descriptionLabel.frame.maxY + 10, width: scrollViewInvestigation.frame.size.width - 40, height: 50)
+            excludeButton.layer.cornerRadius = 10
+            excludeButton.addTarget(self, action: #selector(excludeButtonTapped), for: .touchUpInside)
+                    pageView.addSubview(excludeButton)
+            
+            // Füge den kompletten Container zur ScrollView hinzu
+            scrollViewInvestigation.addSubview(pageView)
+        }
+        
+        // Set content size of the scrollView based on number of pages
         scrollViewInvestigation.contentSize = CGSize(width: scrollViewInvestigation.frame.size.width * CGFloat(numberOfPages), height: scrollViewInvestigation.frame.size.height)
         scrollViewInvestigation.isPagingEnabled = true
     }
+    
+    @objc func infoButtonTapped(_ sender: UIButton) {
+        let pageIndex = sender.tag  // Hier erhältst du die Seitenzahl/Index
+        print(sender.layer.name ?? "No layer name")
+        switch sender.layer.name {
+        case "verdaechtiger":
+            let info = akte?.verdaechtige[pageIndex]  // Hole die relevante Info basierend auf der Seitenzahl
+            print("Info-Button auf Seite \(pageIndex) wurde gedrückt. Verdächtiger: \(info?.info ?? "Unbekannt")")
+        case "tatwaffe":
+            let info = akte?.tatwaffen[pageIndex]  // Hole die relevante Info basierend auf der Seitenzahl
+            print("Info-Button auf Seite \(pageIndex) wurde gedrückt. Tatwaffe: \(info?.info ?? "Unbekannt")")
+        case "tatort":
+            let info = akte?.tatorte[pageIndex]  // Hole die relevante Info basierend auf der Seitenzahl
+            print("Info-Button auf Seite \(pageIndex) wurde gedrückt. Tatort: \(info?.info ?? "Unbekannt")")
+        default:
+            print("default")
+        }
+    }
+
+    @objc func excludeButtonTapped() {
+        print("Ausschließen-Button gedrückt")
+    }
+
     
     @objc func popupMessage(_ sender: UITapGestureRecognizer) {
         // show popup Message
@@ -102,6 +204,12 @@ class InvestigationVC: UIViewController {
     
     @IBAction func finishButtonClicked(_ sender: UIButton) {
         self.parent?.performSegue(withIdentifier: "finishSegue", sender: nil)
+    }
+    
+    
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        // Reload the scrollView with the selected segment
+        setupScrollView(for: sender.selectedSegmentIndex)
     }
     
     // Loading data from Data.plist file
