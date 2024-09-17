@@ -23,6 +23,7 @@
 		44D0DF782C24327E00B077AD /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0DF772C24327D00B077AD /* BeaconManager.swift */; };
 		44FA125C2C2D7D8D00CA455E /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA125B2C2D7D8D00CA455E /* FinishViewController.swift */; };
 		44FA125E2C2D7DB500CA455E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA125D2C2D7DB500CA455E /* PhotoViewController.swift */; };
+		F0490A162C9A164300667A15 /* Akte.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0490A152C9A164300667A15 /* Akte.plist */; };
 		F07AED122C49196D005BFD42 /* BeaconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07AED112C49196D005BFD42 /* BeaconVC.swift */; };
 		F07AED142C492651005BFD42 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07AED132C492651005BFD42 /* MainVC.swift */; };
 		F08D25732C526CC4001F0D06 /* InvestigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D25722C526CC4001F0D06 /* InvestigationVC.swift */; };
@@ -50,6 +51,7 @@
 		44D0DF772C24327D00B077AD /* BeaconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
 		44FA125B2C2D7D8D00CA455E /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		44FA125D2C2D7DB500CA455E /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		F0490A152C9A164300667A15 /* Akte.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Akte.plist; sourceTree = "<group>"; };
 		F07AED112C49196D005BFD42 /* BeaconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconVC.swift; sourceTree = "<group>"; };
 		F07AED132C492651005BFD42 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		F08D25722C526CC4001F0D06 /* InvestigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestigationVC.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				445F60D92C240F2000E3FF55 /* Assets.xcassets */,
 				449DA9892C2C32960030B940 /* Data.plist */,
 				F08D257A2C53AF96001F0D06 /* Orte.plist */,
+				F0490A152C9A164300667A15 /* Akte.plist */,
 				4439D3BE2C240B5700337789 /* AppDelegate.swift */,
 				4439D3C02C240B5700337789 /* SceneDelegate.swift */,
 				4439D3C22C240B5700337789 /* ViewController.swift */,
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4439D3CB2C240B5800337789 /* Base in Resources */,
+				F0490A162C9A164300667A15 /* Akte.plist in Resources */,
 				445F60DA2C240F2000E3FF55 /* Assets.xcassets in Resources */,
 				449DA98A2C2C32960030B940 /* Data.plist in Resources */,
 				4439D3C62C240B5700337789 /* Base in Resources */,

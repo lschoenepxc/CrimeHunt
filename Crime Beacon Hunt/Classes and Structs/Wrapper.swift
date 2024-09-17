@@ -47,6 +47,35 @@ struct Ort {
     let beaconMinor: Int
 }
 
+struct Verdaechtiger {
+    let name: String
+    let job: String
+    let alter: Int
+    let motiv: String
+    let info: String
+    let pic: String
+}
+
+struct Tatwaffe {
+    let bezeichnung: String
+    let methode: String
+    let info: String
+    let pic: String
+}
+
+struct Tatort {
+    let ort: String
+    let beschreibung: String
+    let info: String
+    let pic: String
+}
+
+struct Akte {
+    let verdaechtige: [Verdaechtiger]
+    let tatwaffen: [Tatwaffe]
+    let tatorte: [Tatort]
+}
+
 // MARK: - Wrapping Game Data
 // wrapper format, suitable for all Hunts
 struct GameMessage {

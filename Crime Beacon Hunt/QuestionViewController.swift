@@ -41,19 +41,11 @@ class QuestionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // 1.) change image accoring No
-        if let no = questionNo {
-            //let imageName = "planet\(no)"
-            //imageView.image = UIImage(named: imageName)
-        } else {
-            //imageView.image = UIImage(named: "placeholder")
-        }
-        
-        // 2.) show headline and question
+        // show headline and question
         questionTitleLabel.text = "Frage Nr. \(questionNo!+1)"
         questionTextView.text = quiz?.question
         
-        // 3.) set up (local quiz) timer
+        // set up (local quiz) timer
         timecodeLabel.text = "00:00:00"
         seconds = 0 // better reset at each appearance
         startTimer()

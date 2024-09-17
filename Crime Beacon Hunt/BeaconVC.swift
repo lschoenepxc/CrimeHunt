@@ -99,7 +99,12 @@ class BeaconVC: MainVC {
             page.layer.name = "page\(i)"
             page.backgroundColor = .darkGray
             // let number = i + 1 // because i starts with 0
-            // page.image = UIImage(named: "Explanation\(number)") // images in assets e.g. Explanation1
+            // page.image = UIImage(named: "Explanation\(number)")
+            // images in assets e.g. Explanation1
+            
+            // Set the content mode to scale the image proportionally and center it
+            page.contentMode = .scaleAspectFit  // Ensures the image scales without distorting aspect ratio
+
             
             // set placeholder image for alle but the first scrollview
             if flag {

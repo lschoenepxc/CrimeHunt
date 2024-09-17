@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Verdaechtige</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Lara Fischer</string>
+			<key>job</key>
+			<string>Studentin</string>
+			<key>alter</key>
+			<integer>24</integer>
+			<key>motiv</key>
+			<string>Rache</string>
+			<key>info</key>
+			<string>Die Studentin hatte Streit mit Professor Klein wegen ihrer Abschlussarbeit, die Klein als unzureichend bewertet.</string>
+			<key>pic</key>
+			<string>Verdächtige-LaraFischer</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Marc Hofmann</string>
+			<key>job</key>
+			<string>Mitarbeiter</string>
+			<key>alter</key>
+			<integer>45</integer>
+			<key>motiv</key>
+			<string>Macht und Kontrolle </string>
+			<key>info</key>
+			<string>Der wissenschaftliche Mitarbeiter stand jahrelang im Schatten von Professor Klein. Kürzlich hatte er Streit mit Klein, weil dieser seine Forschungsidee ablehnte.</string>
+			<key>pic</key>
+			<string>Verdächtiger-MarcHofmann</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Jana Müller</string>
+			<key>job</key>
+			<string>Assistentin</string>
+			<key>alter</key>
+			<integer>29</integer>
+			<key>motiv</key>
+			<string>Hass</string>
+			<key>info</key>
+			<string>Die Assistentin von Professor Klein fühlte sich respektlos behandelt und wurde letztlich bei einer Beförderung übergangen.</string>
+			<key>pic</key>
+			<string>Verdächtige-JanaMüller</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Timm Berger</string>
+			<key>job</key>
+			<string>Student</string>
+			<key>alter</key>
+			<integer>22</integer>
+			<key>motiv</key>
+			<string>Zeugen beseitigen</string>
+			<key>info</key>
+			<string>Der Student wurde von Professor Klein bei einem Täuschungsversuch erwischt. Klein drohte ihm darauf hin mit der Exmatrikulation.</string>
+			<key>pic</key>
+			<string>Verdächtiger-TimBerger</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Prof. Dr. Erika Schmidt</string>
+			<key>job</key>
+			<string>Dozentin</string>
+			<key>alter</key>
+			<integer>50</integer>
+			<key>motiv</key>
+			<string>Eifersucht und Neid</string>
+			<key>info</key>
+			<string>Zwischen Professorin Schmidt und Professor Klein herrscht langjährige Rivalität. Kürzlich gab es einen heftigen Streit um die Durchführung eines Filmprojekts.</string>
+			<key>pic</key>
+			<string>Verdächtige-ErikaSchmidt</string>
+		</dict>
+	</array>
+	<key>Tatwaffen</key>
+	<array>
+		<dict>
+			<key>bezeichnung</key>
+			<string>Fotostativ</string>
+			<key>methode</key>
+			<string>Erschlagen</string>
+			<key>info</key>
+			<string>Ein robustes und schweres Stativ, das im Bereich der Medienproduktion häufig verwendet wird. Es könnte als Schlagwaffe verwendet worden sein.</string>
+			<key>pic</key>
+			<string>Tatwaffe-Stativ</string>
+		</dict>
+		<dict>
+			<key>bezeichnung</key>
+			<string>Giftige Flüssigkeit</string>
+			<key>methode</key>
+			<string>Vergiften</string>
+			<key>info</key>
+			<string>Eine Flasche mit giftigem Inhalt, die auf mysteriöse Weise im Gebäude des Fachbereichs Medienproduktion gefunden wurde. Die Herkunft und der Zweck dieser Flüssigkeit sind ungeklärt.</string>
+			<key>pic</key>
+			<string>Tatwaffe-Gift</string>
+		</dict>
+		<dict>
+			<key>bezeichnung</key>
+			<string>Laptop Ladekabel</string>
+			<key>methode</key>
+			<string>Strangulieren</string>
+			<key>info</key>
+			<string>In Professor Kleins Büro fehlt ein Laptop-Kabel. Es könnte als Strangulationsmittel benutzt worden sein.</string>
+			<key>pic</key>
+			<string>Tatwaffe-Ladekabel</string>
+		</dict>
+		<dict>
+			<key>bezeichnung</key>
+			<string>Schwerer Buchband</string>
+			<key>methode</key>
+			<string>Erschlagen</string>
+			<key>info</key>
+			<string>Ein Buchband wird in dem Büro von Prof. Klein vermisst. Aufgrund seines Gewichts könnte es als Schlagwaffe benutzt, worden sein.</string>
+			<key>pic</key>
+			<string>Tatwaffe-Buchband</string>
+		</dict>
+		<dict>
+			<key>bezeichnung</key>
+			<string>Trophäe Filmpreis</string>
+			<key>methode</key>
+			<string>Erschlagen</string>
+			<key>info</key>
+			<string>Eine schwere Trophäe, die in Professor Kleins Büro steht. Sie symbolisiert seine Erfolge, doch in einem Moment der Wut könnte sie als tödliche Schlagwaffe gedient haben.</string>
+			<key>pic</key>
+			<string>Tatwaffe-Pokal</string>
+		</dict>
+	</array>
+	<key>Tatorte</key>
+	<array>
+		<dict>
+			<key>ort</key>
+			<string>Prof. Kleins Büro</string>
+			<key>beschreibung</key>
+			<string>Zentraler Ort seiner Arbeit</string>
+			<key>info</key>
+			<string>Das Büro war der zentrale Ort seiner Arbeit. Hier verbrachte er nicht nur seine produktivsten Stunden, sondern möglicherweise auch seine letzten.</string>
+			<key>pic</key>
+			<string>Tatort-Büro</string>
+		</dict>
+		<dict>
+			<key>ort</key>
+			<string>Videostudio A</string>
+			<key>beschreibung</key>
+			<string>Ort des Videodrehs</string>
+			<key>info</key>
+			<string>Das große Videostudio ist ein zentraler Ort für  Produktionsarbeiten. Mit seinen zahlreichen Verstecken und der komplexen technischen Ausstattung birgt es viele Geheimnisse – und vielleicht auch Hinweise auf das Verbrechen.</string>
+			<key>pic</key>
+			<string>Tatort-Videostudio</string>
+		</dict>
+		<dict>
+			<key>ort</key>
+			<string>Computerlabor 2</string>
+			<key>beschreibung</key>
+			<string>Zentraler Ort für Projektarbeiten</string>
+			<key>info</key>
+			<string>Ausgestattet mit modernster Technologie, wird dieses Labor intensiv für Veranstaltungen und Projekte der Medienproduktion genutzt. Hier herrscht immer reges Treiben, was es zu einem potenziell bedeutsamen Tatort macht.</string>
+			<key>pic</key>
+			<string>Tatort-MacRaum</string>
+		</dict>
+		<dict>
+			<key>ort</key>
+			<string>Regieraum</string>
+			<key>beschreibung</key>
+			<string>Kontrollraum der Dreharbeiten</string>
+			<key>info</key>
+			<string>Ein Raum, der für Besprechungen und Catering während Projekten dient. Ein ruhiger Ort, der inmitten des Projekttrubels eine überraschende Rolle spielen könnte.</string>
+			<key>pic</key>
+			<string>Tatort-Regie</string>
+		</dict>
+		<dict>
+			<key>ort</key>
+			<string>Besprechungsraum</string>
+			<key>beschreibung</key>
+			<string>Aufenthaltsraum der Filmgruppe</string>
+			<key>info</key>
+			<string>In der Regie werden Dreharbeiten kontrolliert und überwacht – und vielleicht auch Geheimnisse verborgen, die es zu entdecken gilt.</string>
+			<key>pic</key>
+			<string>Tatort-Besprechungsraum</string>
+		</dict>
+	</array>
+</dict>
+</plist>
