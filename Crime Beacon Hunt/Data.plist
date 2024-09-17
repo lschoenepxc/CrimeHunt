@@ -6,165 +6,39 @@
 	<array>
 		<dict>
 			<key>Frage</key>
-			<string>Wie groß ist der Umfang des Jupiter?</string>
+			<string>Welches bekannte Filmwerk basiert auf wahren Begebenheiten und handelt von den Ermittlungen gegen einen Serienkiller?</string>
 			<key>Antworten</key>
 			<array>
-				<string>15.329 km</string>
-				<string>21.344 km</string>
-				<string>38.025 km</string>
-				<string>40.075 km</string>
-				<string>155.600 km</string>
-				<string>160.590 km</string>
-				<string>378.675 km</string>
-				<string>439.264 km</string>
-				<string>4.379.000 km</string>
+				<string>Se7en</string>
+				<string>Silence of the Lambs</string>
+				<string>Zodiac - die Spur des Killers</string>
 			</array>
 			<key>richtig</key>
-			<integer>7</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>Frage</key>
-			<string>Wie groß ist der Umfang des Neptun?</string>
+			<string>Wie heißt der Serienmörder aus der Horrorfilmreihe Halloween?</string>
 			<key>Antworten</key>
 			<array>
-				<string>15.329 km</string>
-				<string>21.344 km</string>
-				<string>38.025 km</string>
-				<string>40.075 km</string>
-				<string>155.600 km</string>
-				<string>160.590 km</string>
-				<string>378.675 km</string>
-				<string>439.264 km</string>
-				<string>4.379.000 km</string>
-			</array>
-			<key>richtig</key>
-			<integer>4</integer>
-		</dict>
-		<dict>
-			<key>Frage</key>
-			<string>Wie groß ist der Umfang des Mars?</string>
-			<key>Antworten</key>
-			<array>
-				<string>15.329 km</string>
-				<string>21.344 km</string>
-				<string>38.025 km</string>
-				<string>40.075 km</string>
-				<string>155.600 km</string>
-				<string>160.590 km</string>
-				<string>378.675 km</string>
-				<string>439.264 km</string>
-				<string>4.379.000 km</string>
-			</array>
-			<key>richtig</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>Frage</key>
-			<string>Wie groß ist der Umfang des Uranus?</string>
-			<key>Antworten</key>
-			<array>
-				<string>15.329 km</string>
-				<string>21.344 km</string>
-				<string>38.025 km</string>
-				<string>40.075 km</string>
-				<string>155.600 km</string>
-				<string>160.590 km</string>
-				<string>378.675 km</string>
-				<string>439.264 km</string>
-				<string>4.379.000 km</string>
-			</array>
-			<key>richtig</key>
-			<integer>5</integer>
-		</dict>
-		<dict>
-			<key>Frage</key>
-			<string>Wie groß ist der Umfang des Merkur?</string>
-			<key>Antworten</key>
-			<array>
-				<string>15.329 km</string>
-				<string>21.344 km</string>
-				<string>38.025 km</string>
-				<string>40.075 km</string>
-				<string>155.600 km</string>
-				<string>160.590 km</string>
-				<string>378.675 km</string>
-				<string>439.264 km</string>
-				<string>4.379.000 km</string>
+				<string>Michael Myers</string>
+				<string>Jason Voorhees</string>
+				<string>Freddy Krueger</string>
 			</array>
 			<key>richtig</key>
 			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>Frage</key>
-			<string>Wie groß ist der Umfang des Saturn?</string>
+			<string>In der Serie Breaking Bad entwickelt sich der Hauptcharakter Walter White von einem Chemielehrer zu einem Drogenboss. Welcher Name wird ihm in der kriminellen Unterwelt gegeben?</string>
 			<key>Antworten</key>
 			<array>
-				<string>15.329 km</string>
-				<string>21.344 km</string>
-				<string>38.025 km</string>
-				<string>40.075 km</string>
-				<string>155.600 km</string>
-				<string>160.590 km</string>
-				<string>378.675 km</string>
-				<string>439.264 km</string>
-				<string>4.379.000 km</string>
+				<string>The Chemist</string>
+				<string>Heisenberg</string>
+				<string>Eisenhower</string>
 			</array>
 			<key>richtig</key>
-			<integer>6</integer>
-		</dict>
-		<dict>
-			<key>Frage</key>
-			<string>Wie groß ist der Umfang der Sonne?</string>
-			<key>Antworten</key>
-			<array>
-				<string>15.329 km</string>
-				<string>21.344 km</string>
-				<string>38.025 km</string>
-				<string>40.075 km</string>
-				<string>155.600 km</string>
-				<string>160.590 km</string>
-				<string>378.675 km</string>
-				<string>439.264 km</string>
-				<string>4.379.000 km</string>
-			</array>
-			<key>richtig</key>
-			<integer>8</integer>
-		</dict>
-		<dict>
-			<key>Frage</key>
-			<string>Wie groß ist der Umfang der Erde?</string>
-			<key>Antworten</key>
-			<array>
-				<string>15.329 km</string>
-				<string>21.344 km</string>
-				<string>38.025 km</string>
-				<string>40.075 km</string>
-				<string>155.600 km</string>
-				<string>160.590 km</string>
-				<string>378.675 km</string>
-				<string>439.264 km</string>
-				<string>4.379.000 km</string>
-			</array>
-			<key>richtig</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>Frage</key>
-			<string>Wie groß ist der Umfang der Venus?</string>
-			<key>Antworten</key>
-			<array>
-				<string>15.329 km</string>
-				<string>21.344 km</string>
-				<string>38.025 km</string>
-				<string>40.075 km</string>
-				<string>155.600 km</string>
-				<string>160.590 km</string>
-				<string>378.675 km</string>
-				<string>439.264 km</string>
-				<string>4.379.000 km</string>
-			</array>
-			<key>richtig</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 	</array>
 </dict>

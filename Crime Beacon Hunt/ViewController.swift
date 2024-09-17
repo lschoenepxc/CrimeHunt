@@ -48,6 +48,7 @@ class ViewController: UIViewController {
         Aber Vorsicht…
 
         das Lösen der Rätsel kann zwar beliebig oft versucht werden, doch jeder Fehlversuch verringert die zu erspielenden Punkte. Der Detektiv, der den Mordfall am schnellsten löst und dabei die meisten Punkte erzielt, wird als Sieger hervorgehen.
+        
         Bringe also nun die Wahrheit ans Licht – die Gerechtigkeit liegt in deinen Händen!
         """
         labelTexts.append(text)
@@ -101,11 +102,6 @@ class ViewController: UIViewController {
                 label.trailingAnchor.constraint(equalTo: pageView.trailingAnchor, constant: -20),
                 label.bottomAnchor.constraint(lessThanOrEqualTo: pageView.bottomAnchor, constant: -20)
             ])
-            
-            // 4 values x/y: top corner left (origin) | width | height)
-            // width & height equal scrollView
-            //label.frame = CGRect(x: CGFloat(i) * scrollView.frame.size.width, y: 0, width: scrollView.frame.size.width, height: scrollView.frame.size.height)
-            //scrollView.addSubview(label)
         }
         
         // we need to setup the ContentSize (3 pages side by side)

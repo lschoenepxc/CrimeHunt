@@ -33,7 +33,7 @@ class BeaconVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        quizButton.isEnabled = false
+        //quizButton.isEnabled = false
 
         // Do any additional setup after loading the view.
         numberOfPages = orte!.count
@@ -124,7 +124,7 @@ class BeaconVC: MainVC {
             labelPlaceName.contentMode = .top
             labelPlaceName.font = .systemFont(ofSize: 16, weight: .medium)
             //labelPlaceName.text = orte![i].name
-            labelPlaceName.text = ""
+            labelPlaceName.text = "Beacon " + String(i+1)
             labelPlaceName.frame = page.bounds
             
             page.addSubview(labelPlaceName)

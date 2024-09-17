@@ -8,7 +8,7 @@
 			<key>ortID</key>
 			<integer>0</integer>
 			<key>name</key>
-			<string>Mac-Raum</string>
+			<string>Fotostudio</string>
 			<key>picture</key>
 			<string>Kamera</string>
 			<key>quizNo</key>
@@ -28,7 +28,7 @@
 			<key>ortID</key>
 			<integer>1</integer>
 			<key>name</key>
-			<string>Küche</string>
+			<string>Audiohörraum</string>
 			<key>picture</key>
 			<string>Kopfhörer</string>
 			<key>quizNo</key>
@@ -48,7 +48,7 @@
 			<key>ortID</key>
 			<integer>2</integer>
 			<key>name</key>
-			<string>Garten</string>
+			<string>Schnittplatz</string>
 			<key>picture</key>
 			<string>Schere</string>
 			<key>quizNo</key>

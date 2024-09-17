@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="690.83969465648852" y="-23.239436619718312"/>
         </scene>
-        <!--IndizienView-->
+        <!--QuestionView-->
         <scene sceneID="hEP-KG-3e6">
             <objects>
-                <viewController title="IndizienView" id="ayh-eg-YZQ" customClass="QuestionButtonViewController" customModule="Crime_Beacon_Hunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="QuestionView" id="ayh-eg-YZQ" customClass="QuestionButtonViewController" customModule="Crime_Beacon_Hunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iA9-SZ-h5D">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

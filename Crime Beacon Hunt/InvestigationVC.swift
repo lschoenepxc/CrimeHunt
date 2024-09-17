@@ -25,7 +25,7 @@ class InvestigationVC: UIViewController {
         // Do any additional setup after loading the view.
         
         anklageButton.layer.name = "Anklage"
-        anklageButton.isEnabled = false
+        //anklageButton.isEnabled = false
         
         // selected option color
         InvestigationSegmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
