@@ -121,6 +121,11 @@ class MainVC: UIViewController {
             let timeText = timeString(time: Double(seconds))
             let time = seconds
             let score = calculateScore()
+            for child in self.children {
+                if let beaconVC = child as? BeaconVC {
+                    beaconVC.beaconManager.stopScanning()
+                }
+            }
             finishVC.receiveGameData(timeString: timeText, seconds: time, score: score)
             
             // 2.) full screen
@@ -164,6 +169,21 @@ class MainVC: UIViewController {
         
         var beaconScrollView = UIScrollView()
         var beaconPageControl = UIPageControl()
+        
+        // find anklageButton in investigationView
+        for subview in investigationView.subviews[0].subviews {
+            if let anklageButton = subview as? UIButton {
+                if (anklageButton.layer.name == "Anklage") {
+                    if (currentIndex < 3) {
+                        anklageButton.isEnabled = false
+                    }
+                    else {
+                        anklageButton.isEnabled = true
+                    }
+                }
+            }
+        }
+        
         // find scrollview in beaconView
         for subview in beaconView.subviews[0].subviews {
             if let scrollView = subview as? UIScrollView {

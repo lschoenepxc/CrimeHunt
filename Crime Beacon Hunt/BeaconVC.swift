@@ -33,7 +33,7 @@ class BeaconVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //quizButton.isEnabled = false
+        quizButton.isEnabled = false
 
         // Do any additional setup after loading the view.
         numberOfPages = orte!.count
@@ -145,7 +145,7 @@ class BeaconVC: MainVC {
             filter.setValue(inputImage, forKey: kCIInputImageKey)
             
             // Pixelgröße einstellen (Je höher der Wert, desto stärker die Verpixelung)
-            filter.setValue(50, forKey: kCIInputScaleKey)
+            filter.setValue(80, forKey: kCIInputScaleKey)
             
             // Gefiltertes Bild erzeugen
             let context = CIContext()
@@ -167,7 +167,13 @@ class BeaconVC: MainVC {
             case 1:
                 lowRange.backgroundColor = UIColor(named: "RangeGreen")
                 lowRange.text = "nah"
-                quizButton.isEnabled = true
+                if (currentIndex < 3) {
+                    quizButton.isEnabled = true
+                }
+                else {
+                    quizButton.backgroundColor = .black
+                    quizButton.tintColor = .black
+                }
             case 2:
                 lowRange.backgroundColor = UIColor(named: "RangeOrange")
                 lowRange.text = "näher"

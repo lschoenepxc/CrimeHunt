@@ -13,6 +13,9 @@ class InvestigationVC: UIViewController {
     @IBOutlet weak var scrollViewInvestigation: UIScrollView!
     @IBOutlet weak var pageControlInvestigation: UIPageControl!
     
+    @IBOutlet weak var anklageButton: UIButton!
+    
+    
     @IBOutlet weak var InvestigationSegmentedControl: UISegmentedControl!
     
     
@@ -20,6 +23,9 @@ class InvestigationVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        anklageButton.layer.name = "Anklage"
+        anklageButton.isEnabled = false
         
         // selected option color
         InvestigationSegmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)

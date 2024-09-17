@@ -214,7 +214,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frage 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elS-BA-y7h">
                                         <rect key="frame" x="0.0" y="0.0" width="58.666666666666664" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemGray5Color"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jOl-3D-OZ7">
@@ -321,7 +321,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CrimeBeaconLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pmU-K8-buB">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-Weiß" translatesAutoresizingMaskIntoConstraints="NO" id="pmU-K8-buB">
                                 <rect key="frame" x="132.66666666666666" y="107" width="127.99999999999997" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pmU-K8-buB" secondAttribute="height" multiplier="1:1" id="J4v-AV-Y0j"/>
@@ -371,22 +371,6 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd3-aN-YbZ">
-                                <rect key="frame" x="139" y="600" width="115" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="K4C-jt-fVN"/>
-                                    <constraint firstAttribute="width" constant="115" id="Pla-ep-vtj"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Send Result">
-                                    <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" name="DarkColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="quizButton:" destination="0yx-7O-lJz" eventType="touchUpInside" id="jLy-ks-cIM"/>
-                                    <action selector="sendResultPressed:" destination="WMm-sY-Hd1" eventType="touchUpInside" id="mtw-Za-8HS"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEr-hO-Gzs">
                                 <rect key="frame" x="310" y="10" width="59.666666666666686" height="34.333333333333336"/>
                                 <constraints>
@@ -400,18 +384,29 @@
                                     <action selector="stopButtonPressed:" destination="k6X-Ya-1eq" eventType="touchUpInside" id="i6h-1p-Kj7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd3-aN-YbZ">
+                                <rect key="frame" x="127" y="682" width="133" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Send Result">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="quizButton:" destination="0yx-7O-lJz" eventType="touchUpInside" id="jLy-ks-cIM"/>
+                                    <action selector="sendResultPressed:" destination="WMm-sY-Hd1" eventType="touchUpInside" id="mtw-Za-8HS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Asx-8S-wLd"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sKv-Fp-5Bj" firstAttribute="top" secondItem="hd7-dA-6Ds" secondAttribute="bottom" constant="14" id="0vM-qh-MWZ"/>
                             <constraint firstItem="Asx-8S-wLd" firstAttribute="trailing" secondItem="hd7-dA-6Ds" secondAttribute="trailing" constant="39" id="1ue-eA-Jya"/>
                             <constraint firstItem="pmU-K8-buB" firstAttribute="centerX" secondItem="Asx-8S-wLd" secondAttribute="centerX" id="3PT-9L-68C"/>
                             <constraint firstItem="JEr-hO-Gzs" firstAttribute="leading" secondItem="Asx-8S-wLd" secondAttribute="leading" constant="310" id="KWM-9i-6eh"/>
                             <constraint firstItem="hd7-dA-6Ds" firstAttribute="top" secondItem="fu5-m3-4up" secondAttribute="bottom" constant="25.670000000000002" id="LP6-oe-Lv9"/>
-                            <constraint firstItem="Asx-8S-wLd" firstAttribute="trailing" secondItem="dd3-aN-YbZ" secondAttribute="trailing" constant="139" id="PGv-JQ-zbx"/>
                             <constraint firstItem="Asx-8S-wLd" firstAttribute="bottom" secondItem="1M3-6w-hn4" secondAttribute="bottom" constant="50" id="cQo-Ik-dHy"/>
-                            <constraint firstItem="1M3-6w-hn4" firstAttribute="top" secondItem="dd3-aN-YbZ" secondAttribute="bottom" constant="136.66999999999999" id="fOk-A7-RC0"/>
                             <constraint firstItem="hd7-dA-6Ds" firstAttribute="leading" secondItem="Asx-8S-wLd" secondAttribute="leading" constant="38" id="g5m-ax-0U4"/>
                             <constraint firstItem="pmU-K8-buB" firstAttribute="top" secondItem="Asx-8S-wLd" secondAttribute="top" constant="107" id="glw-xv-bl2"/>
                             <constraint firstItem="Asx-8S-wLd" firstAttribute="trailing" secondItem="sKv-Fp-5Bj" secondAttribute="trailing" constant="39" id="hFF-gU-w4d"/>
@@ -420,7 +415,6 @@
                             <constraint firstItem="sKv-Fp-5Bj" firstAttribute="leading" secondItem="Asx-8S-wLd" secondAttribute="leading" constant="38" id="mMx-1e-BEH"/>
                             <constraint firstItem="JEr-hO-Gzs" firstAttribute="top" secondItem="Asx-8S-wLd" secondAttribute="top" constant="10" id="pfs-jA-XRz"/>
                             <constraint firstItem="fu5-m3-4up" firstAttribute="top" secondItem="pmU-K8-buB" secondAttribute="bottom" constant="63" id="rip-S2-I9J"/>
-                            <constraint firstItem="dd3-aN-YbZ" firstAttribute="leading" secondItem="Asx-8S-wLd" secondAttribute="leading" constant="139" id="ykY-ut-UtQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -432,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HET-lZ-Dce" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="868"/>
+            <point key="canvasLocation" x="693.89312977099235" y="867.6056338028169"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="Z9a-xq-V4n">
@@ -582,7 +576,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Rätsel">
-                                    <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -643,12 +637,11 @@
                                 </constraints>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFD-Fb-BM2">
-                                <rect key="frame" x="249" y="585" width="86" height="35"/>
+                                <rect key="frame" x="235" y="585" width="100" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="AB2-2R-oeA"/>
-                                    <constraint firstAttribute="width" constant="86" id="s1n-lq-72d"/>
+                                    <constraint firstAttribute="width" constant="100" id="uSl-J4-MHp"/>
                                 </constraints>
-                                <color key="tintColor" name="MediumColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Anklage"/>
                                 <connections>
@@ -674,10 +667,10 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCP-OC-mGo">
-                                <rect key="frame" x="54" y="585" width="83" height="35"/>
+                                <rect key="frame" x="54" y="585" width="100" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="HPo-gJ-bZX"/>
-                                    <constraint firstAttribute="width" constant="83" id="T2D-kQ-T9v"/>
+                                    <constraint firstAttribute="width" constant="100" id="iSl-n3-90M"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Indizien"/>
@@ -700,14 +693,15 @@
                             <constraint firstItem="kzT-AR-VEi" firstAttribute="leading" secondItem="muy-LX-7aZ" secondAttribute="leading" constant="138" id="eK3-Lp-fGU"/>
                             <constraint firstItem="PFD-Fb-BM2" firstAttribute="top" secondItem="kzT-AR-VEi" secondAttribute="bottom" constant="28" id="euW-6t-zw2"/>
                             <constraint firstItem="jCP-OC-mGo" firstAttribute="leading" secondItem="muy-LX-7aZ" secondAttribute="leading" constant="54" id="hYV-96-fER"/>
+                            <constraint firstItem="PFD-Fb-BM2" firstAttribute="leading" secondItem="jCP-OC-mGo" secondAttribute="trailing" constant="81" id="i3d-PU-uUY"/>
                             <constraint firstItem="muy-LX-7aZ" firstAttribute="trailing" secondItem="xNC-LH-gYd" secondAttribute="trailing" constant="58" id="p7a-kE-nF8"/>
-                            <constraint firstItem="PFD-Fb-BM2" firstAttribute="leading" secondItem="jCP-OC-mGo" secondAttribute="trailing" constant="112" id="s1a-9s-B8F"/>
                             <constraint firstItem="xNC-LH-gYd" firstAttribute="leading" secondItem="muy-LX-7aZ" secondAttribute="leading" constant="54" id="uc5-FI-HOp"/>
                             <constraint firstItem="gHP-nu-nkx" firstAttribute="top" secondItem="xNC-LH-gYd" secondAttribute="bottom" constant="73" id="x5N-2Q-4Kq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="InvestigationSegmentedControl" destination="xNC-LH-gYd" id="hab-Fv-wET"/>
+                        <outlet property="anklageButton" destination="PFD-Fb-BM2" id="6Vu-GP-fB0"/>
                         <outlet property="pageControlInvestigation" destination="kzT-AR-VEi" id="97p-8E-8hs"/>
                         <outlet property="scrollViewInvestigation" destination="gHP-nu-nkx" id="fZj-t0-YkX"/>
                     </connections>
@@ -779,33 +773,17 @@
     </scenes>
     <color key="tintColor" name="AccentColor"/>
     <resources>
-        <image name="CrimeBeaconLogo" width="993" height="941"/>
         <image name="Logo-Weiß" width="3201" height="3200"/>
         <image name="person.fill.viewfinder" catalog="system" width="128" height="115"/>
         <image name="questionmark.app.fill" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.98799997568130493" green="0.0" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="DarkColor">
-            <color red="0.23899999260902405" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="MediumColor">
-            <color red="0.58399999141693115" green="0.0040000001899898052" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -61,6 +61,7 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
         for beacon in beacons {
             guard let minor = beacon.minor as? UInt16 else { continue }
             let beaconIndex = minorArray.firstIndex(of: minor) ?? -1
+            //let beaconIndex = currentIndex
             if beaconIndex != -1 {
                 delegate?.didUpdateBeaconRange(beacon: beaconIndex, range: beacon.proximity.rawValue)
             }

@@ -66,6 +66,7 @@ class HuntViewController: MainVC {
         stopTimer()
         beaconManager.stopScanning()
         isScanning = false
+        currentIndex = 0
     }
     
     // MARK: - User Action
@@ -74,6 +75,7 @@ class HuntViewController: MainVC {
     @IBAction func stopButtonPressed(_ sender: Any) {
         
         stopHunt()
+        print(currentIndex)
         
         // this viewController closes itself
         dismiss(animated: true, completion: nil)
