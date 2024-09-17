@@ -79,20 +79,6 @@ class QuestionViewController: UIViewController {
     }
     */
 
-    // MARK: - User Action
-    
-    @IBAction func surrenderButtonPressed(_ sender: Any) {
-        
-        stopTimer()
-        
-        if let presentingVC = self.presentingViewController as? MainVC {
-            
-            presentingVC.receiveResult(answer: nil) // send result to main VC
-        }
-        
-        // this viewController closes itself
-        dismiss(animated: true, completion: nil)
-    }
     
     // MARK: - Timer
     // this is copy & pasted code - there is of course a better solution, but for now…

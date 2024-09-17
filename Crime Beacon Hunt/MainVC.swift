@@ -28,7 +28,7 @@ class MainVC: UIViewController {
     
     // Game Data
     var questions: [QuizQuestion]? // optional array of questions, not existent at start
-    var answers = [QuizAnswer]() // empty array
+    var answerScores = [Int]() // empty array
     var presentedQuizNo = 0
     
     // keep track of current index for orte and quiz questions (both shuffled lists)
@@ -135,13 +135,10 @@ class MainVC: UIViewController {
     
     // MARK: - Data Entry after Quiz
     
-    func receiveResult(answer: QuizAnswer?) {
+    func receiveResult(answerScore: Int) {
         
-        if let result = answer {
-            print("Received answer: \(result)")
-        } else {
-            print("Player surrendered QUIZ No \(presentedQuizNo)")
-        }
+        print("Scored: \(answerScore)")
+
         for child in self.children {
             if let beaconVC = child as? BeaconVC {
                 beaconVC.beaconManager.startScanning()
@@ -149,19 +146,13 @@ class MainVC: UIViewController {
         }
         
         // put into a seprate function for clarity
-        storeResult(answer: answer)
+        storeResult(answerScore: answerScore)
     }
     
-    func storeResult(answer: QuizAnswer?) {
+    func storeResult(answerScore: Int) {
         
-        if let storeAnswer = answer { // answer given
-            
-            // store result
-            answers.append(storeAnswer)
-            
-        } else { // no answer given: surrendered
-            // do nothing
-        }
+        // store result
+        answerScores.append(answerScore)
         
         // count up the current Index
         currentIndex = currentIndex + 1
@@ -228,31 +219,8 @@ class MainVC: UIViewController {
         
         var score = 0
         
-        for answer in answers {
-            
-            //let quizNo = answer.quizNo - 1 // adjust to index 0 of array
-            let quizNo = answer.quizNo
-            
-            guard let correctIndex = questions?[quizNo].correctAnswerIndex else {
-                print("Nil data - please check questions no: \(answer.quizNo)")
-                return 0
-            }
-            let correct = answer.answerIndex == correctIndex - 1 // adjust to index 0 of array
-            
-            print("Calculate Score Question: \(answer.quizNo)")
-            print("Correct Answer: \(correctIndex) Selected Answer \(answer.answerIndex)")
-            
-            if correct {
-                if answer.quizTime <= 15 {
-                    score = score + 10 * 4 // factor 4
-                } else if answer.quizTime <= 30 {
-                    score = score + 10 * 3 // factor 3
-                } else if answer.quizTime <= 45 {
-                    score = score + 10 * 2 // factor 2
-                } else {
-                    score = score + 10
-                }
-            } // otherwise do not increase score
+        for answerScore in answerScores {
+            score += answerScore
         }
         
         return score

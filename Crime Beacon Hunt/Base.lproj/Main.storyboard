@@ -269,15 +269,15 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsw-uR-eAN">
-                                <rect key="frame" x="146.66666666666666" y="721" width="100" height="35"/>
+                                <rect key="frame" x="145" y="721" width="103" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="NPA-Ye-MVp"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="h56-wu-Cae"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Surrender"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Antworten"/>
                                 <connections>
-                                    <action selector="surrenderButtonPressed:" destination="ayh-eg-YZQ" eventType="touchUpInside" id="8VP-Vr-pcR"/>
+                                    <action selector="submitButtonPressed:" destination="ayh-eg-YZQ" eventType="touchUpInside" id="b2t-VN-nBq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -306,6 +306,7 @@
                         <outlet property="imageView" destination="2eh-XR-k4e" id="gZa-6j-x67"/>
                         <outlet property="questionTextView" destination="jOl-3D-OZ7" id="QcW-BY-OoC"/>
                         <outlet property="questionTitleLabel" destination="elS-BA-y7h" id="D4s-IV-8bq"/>
+                        <outlet property="submitButton" destination="Dsw-uR-eAN" id="oNA-VM-0P8"/>
                         <outlet property="timecodeLabel" destination="aZk-bS-MwK" id="ZgY-RO-Jf1"/>
                     </connections>
                 </viewController>
