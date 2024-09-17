@@ -124,7 +124,7 @@
                                 </constraints>
                                 <segments>
                                     <segment title="Beacon"/>
-                                    <segment title="Ermittlung"/>
+                                    <segment title="Akte"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" name="AccentColor"/>
                                 <connections>
