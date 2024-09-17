@@ -93,6 +93,9 @@ class InvestigationVC: UIViewController {
         for i in 0..<numberOfPages {
             // Container für jedes Element
             let pageView = UIView()
+            // Abgerundete Ecken für die Seite
+            pageView.layer.cornerRadius = 20.0
+            pageView.layer.masksToBounds = true
             pageView.frame = CGRect(x: CGFloat(i) * scrollViewInvestigation.frame.size.width, y: 0, width: scrollViewInvestigation.frame.size.width, height: scrollViewInvestigation.frame.size.height)
             pageView.backgroundColor = .darkGray
                     
@@ -101,7 +104,7 @@ class InvestigationVC: UIViewController {
             
             // Info-Button (oben rechts)
             let infoButton = UIButton(type: .infoLight)
-            infoButton.frame = CGRect(x: scrollViewInvestigation.frame.size.width - 50, y: 20, width: 30, height: 30)
+            infoButton.frame = CGRect(x: scrollViewInvestigation.frame.size.width - 40, y: 10, width: 30, height: 30)
             
             // Titel-Label
             let titleLabel = UILabel()
@@ -143,7 +146,7 @@ class InvestigationVC: UIViewController {
             pageView.addSubview(titleLabel)
             
             descriptionLabel.font = UIFont.systemFont(ofSize: 14)
-            descriptionLabel.textColor = .gray
+            descriptionLabel.textColor = .lightGray
             descriptionLabel.frame = CGRect(x: 20, y: titleLabel.frame.maxY + 5, width: scrollViewInvestigation.frame.size.width - 40, height: 20)
             pageView.addSubview(descriptionLabel)
             
@@ -168,7 +171,7 @@ class InvestigationVC: UIViewController {
     
     @objc func infoButtonTapped(_ sender: UIButton) {
         let pageIndex = sender.tag  // Hier erhältst du die Seitenzahl/Index
-        print(sender.layer.name ?? "No layer name")
+        // (sender.layer.name ?? "No layer name")
         switch sender.layer.name {
         case "verdaechtiger":
             let info = akte?.verdaechtige[pageIndex]  // Hole die relevante Info basierend auf der Seitenzahl

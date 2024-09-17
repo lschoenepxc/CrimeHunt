@@ -96,6 +96,9 @@ class BeaconVC: MainVC {
         var flag = true
         for i in 0..<numberOfPagesScroll {
             let page = UIImageView()
+            // Abgerundete Ecken für die Seite
+            page.layer.cornerRadius = 20.0
+            page.layer.masksToBounds = true
             page.layer.name = "page\(i)"
             page.backgroundColor = .darkGray
             // let number = i + 1 // because i starts with 0
