@@ -1,10 +1,3 @@
-//
-//  FinishViewController.swift
-//  Universe Hunt
-//
-//  Created by Heizo Schulze on 27.06.24.
-//
-
 import UIKit
 import MultipeerConnectivity
 

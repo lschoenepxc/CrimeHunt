@@ -1,10 +1,3 @@
-//
-//  HuntViewController.swift
-//  Universe Hunt
-//
-//  Created by Heizo Schulze on 20.06.24.
-//
-
 import UIKit
 
 class HuntViewController: MainVC {

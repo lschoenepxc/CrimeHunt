@@ -1,10 +1,3 @@
-//
-//  BeaconVC.swift
-//  Universe Hunt
-//
-//  Created by Laura Schöne on 18.07.24.
-//
-
 import UIKit
 import CoreImage
 

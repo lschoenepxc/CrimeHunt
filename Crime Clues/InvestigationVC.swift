@@ -1,10 +1,3 @@
-//
-//  InvestigationVC.swift
-//  Universe Hunt
-//
-//  Created by Laura Schöne on 25.07.24.
-//
-
 import UIKit
 import Foundation
 

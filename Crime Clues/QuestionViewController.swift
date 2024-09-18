@@ -1,10 +1,3 @@
-//
-//  QuestionViewController.swift
-//  Universe Hunt
-//
-//  Created by Heizo Schulze on 26.06.24.
-//
-
 import UIKit
 
 class QuestionViewController: UIViewController {

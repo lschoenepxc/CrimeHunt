@@ -1,10 +1,3 @@
-//
-//  IndizienVC.swift
-//  Universe Hunt
-//
-//  Created by Laura Schöne on 26.07.24.
-//
-
 import UIKit
 
 class IndizienVC: MainVC {

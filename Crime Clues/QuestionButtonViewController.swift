@@ -1,10 +1,3 @@
-//
-//  QuestionButtonViewController.swift
-//  Crime Hunt
-//
-//  Created by Laura Schöne
-//
-
 import UIKit
 
 class QuestionButtonViewController: QuestionViewController {

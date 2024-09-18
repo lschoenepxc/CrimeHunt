@@ -1,11 +1,3 @@
-//
-//  Constants.swift
-//  BLE
-//
-//  Created by Heizo Schulze on 05.11.19.
-//  Copyright © 2019 fb2.th-owl.de. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
