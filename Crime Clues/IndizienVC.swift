@@ -14,7 +14,7 @@ class IndizienVC: MainVC {
     
     var ortIndizien = [[String]]()
     
-    var orteNamen = [String]()
+    var orteNamen = ["Verdächtige", "Tatwaffen", "Tatorte"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,16 +22,11 @@ class IndizienVC: MainVC {
         if (currentIndex > 0) {
             let count = 0...currentIndex-1
             for index in count {
-                orteNamen.append(orte![index].name)
+                //orteNamen.append(orte![index].name)
                 ortIndizien.append(orte![index].indizien)
                 print(orteNamen)
             }
         }
-        
-        //for ort in orte! {
-        //    orteNamen.append(ort.name)
-        //    ortIndizien.append(ort.indizien)
-        //}
 
         // Do any additional setup after loading the view.
         tableViewIndizien.delegate = self
