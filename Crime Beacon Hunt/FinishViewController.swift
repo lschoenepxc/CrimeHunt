@@ -35,6 +35,9 @@ class FinishViewController: UIViewController {
     let tatortSource = ["Büro", "Videostudio", "Computerlabor", "Regieraum", "Besprechungsraum"]
     
     var anklage = ["Lara Fischer", "Fotostativ", "Büro"]
+    let correctAnklage = ["Timm Berger", "Fotostativ", "Regieraum"]
+    
+    var anklageScore = 0
     
     weak var delegate: CloseDelegate?
     
@@ -94,7 +97,7 @@ class FinishViewController: UIViewController {
         tatortButton.showsMenuAsPrimaryAction = true
         tatortButton.changesSelectionAsPrimaryAction = true
         
-        
+        calculateAnklageScore()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -147,8 +150,22 @@ class FinishViewController: UIViewController {
             default:
                 print()
             }
-            print(self.anklage)
+            //print(self.anklage)
+            self.calculateAnklageScore()
         }
+    }
+    
+    func calculateAnklageScore() {
+        if (anklage == correctAnklage) {anklageScore = 40}
+        else {
+            anklageScore = 0
+            for i in 0..<3 {
+                if (anklage[i] == correctAnklage[i]) {
+                    anklageScore += 10
+                }
+            }
+        }
+        print(anklageScore)
     }
     
     // MARK: - User Action
@@ -204,7 +221,7 @@ class FinishViewController: UIViewController {
         }
         
         do {
-            try mpcManager?.send(name: result.teamName, value: result.score, time: result.seconds, image: result.image)
+            try mpcManager?.send(name: result.teamName, value: result.score + anklageScore, time: result.seconds, image: result.image)
             return (send: true, message: "Your result has been send and should be visible soon.")
         } catch {
             return (send: false, message: "Result could not be send. Try again.")
