@@ -23,6 +23,19 @@ class FinishViewController: UIViewController {
     @IBOutlet weak var sendResultButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     
+    
+    @IBOutlet weak var taeterButton: UIButton!
+    
+    @IBOutlet weak var tatwaffeButton: UIButton!
+    
+    @IBOutlet weak var tatortButton: UIButton!
+    
+    let taeterSource = ["Lara Fischer", "Marc Hofmann", "Jana Müller", "Timm Berger", "Erika Schmidt"]
+    let tatwaffeSource = ["Fotostativ", "Gift", "Ladekabel", "Buchband", "Trophäe"]
+    let tatortSource = ["Büro", "Videostudio", "Computerlabor", "Regieraum", "Besprechungsraum"]
+    
+    var anklage = ["Lara Fischer", "Fotostativ", "Büro"]
+    
     weak var delegate: CloseDelegate?
     
     // MARK: - Properties
@@ -44,6 +57,42 @@ class FinishViewController: UIViewController {
         mpcManager = MPCManager() // initialize the manager
         mpcManager?.delegate = self // tell him whom to report to
         sendResultButton.isEnabled = false
+
+        // add Dropdown for Taeter
+        var menuChildrenTaeter: [UIMenuElement] = []
+        for taeter in taeterSource {
+            let action = createAction(title: taeter, category: "taeter")
+            menuChildrenTaeter.append(action)
+        }
+            
+        taeterButton.menu = UIMenu(options: .displayInline, children: menuChildrenTaeter)
+            
+        taeterButton.showsMenuAsPrimaryAction = true
+        taeterButton.changesSelectionAsPrimaryAction = true
+        
+        // add Dropdown for Tatwaffe
+        var menuChildrenTatwaffe: [UIMenuElement] = []
+        for tatwaffe in tatwaffeSource {
+            let action = createAction(title: tatwaffe, category: "tatwaffe")
+            menuChildrenTatwaffe.append(action)
+        }
+            
+        tatwaffeButton.menu = UIMenu(options: .displayInline, children: menuChildrenTatwaffe)
+            
+        tatwaffeButton.showsMenuAsPrimaryAction = true
+        tatwaffeButton.changesSelectionAsPrimaryAction = true
+        
+        // add Dropdown for Tatort
+        var menuChildrenTatort: [UIMenuElement] = []
+        for tatort in tatortSource {
+            let action = createAction(title: tatort, category: "tatort")
+            menuChildrenTatort.append(action)
+        }
+            
+        tatortButton.menu = UIMenu(options: .displayInline, children: menuChildrenTatort)
+            
+        tatortButton.showsMenuAsPrimaryAction = true
+        tatortButton.changesSelectionAsPrimaryAction = true
         
         
     }
@@ -80,6 +129,25 @@ class FinishViewController: UIViewController {
             // We do not use fullscreen here, so the user might return
             // sendVC.modalPresentationStyle = .fullScreen
             
+        }
+    }
+    
+    func createAction(title: String, category: String) -> UIAction {
+        return UIAction(title: title) { action in
+            //print("Action triggered for: \(title)")
+            //print("Extra Info: \(category)")
+            
+            switch category {
+            case "taeter":
+                self.anklage[0] = title
+            case "tatwaffe":
+                self.anklage[1] = title
+            case "tatort":
+                self.anklage[2] = title
+            default:
+                print()
+            }
+            print(self.anklage)
         }
     }
     
