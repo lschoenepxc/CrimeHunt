@@ -33,7 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4439D3BB2C240B5700337789 /* Crime Beacon Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crime Beacon Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4439D3BB2C240B5700337789 /* Crime Clues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crime Clues.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4439D3BE2C240B5700337789 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4439D3C02C240B5700337789 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4439D3C22C240B5700337789 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		4439D3B22C240B5700337789 = {
 			isa = PBXGroup;
 			children = (
-				4439D3BD2C240B5700337789 /* Crime Beacon Hunt */,
+				4439D3BD2C240B5700337789 /* Crime Clues */,
 				4439D3BC2C240B5700337789 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,12 +82,12 @@
 		4439D3BC2C240B5700337789 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4439D3BB2C240B5700337789 /* Crime Beacon Hunt.app */,
+				4439D3BB2C240B5700337789 /* Crime Clues.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4439D3BD2C240B5700337789 /* Crime Beacon Hunt */ = {
+		4439D3BD2C240B5700337789 /* Crime Clues */ = {
 			isa = PBXGroup;
 			children = (
 				445F60D92C240F2000E3FF55 /* Assets.xcassets */,
@@ -113,7 +113,7 @@
 				F08D257C2C53B2E8001F0D06 /* IndizienVC.swift */,
 				F0B504D32C55900C00DADB5E /* VerticalAlignedLabel.swift */,
 			);
-			path = "Crime Beacon Hunt";
+			path = "Crime Clues";
 			sourceTree = "<group>";
 		};
 		4475D0AE2C35AD1300194979 /* BLE Communication */ = {
@@ -137,9 +137,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4439D3BA2C240B5700337789 /* Crime Beacon Hunt */ = {
+		4439D3BA2C240B5700337789 /* Crime Clues */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4439D3CF2C240B5800337789 /* Build configuration list for PBXNativeTarget "Crime Beacon Hunt" */;
+			buildConfigurationList = 4439D3CF2C240B5800337789 /* Build configuration list for PBXNativeTarget "Crime Clues" */;
 			buildPhases = (
 				4439D3B72C240B5700337789 /* Sources */,
 				4439D3B82C240B5700337789 /* Frameworks */,
@@ -149,9 +149,9 @@
 			);
 			dependencies = (
 			);
-			name = "Crime Beacon Hunt";
+			name = "Crime Clues";
 			productName = "Universe Hunt";
-			productReference = 4439D3BB2C240B5700337789 /* Crime Beacon Hunt.app */;
+			productReference = 4439D3BB2C240B5700337789 /* Crime Clues.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -169,7 +169,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4439D3B62C240B5700337789 /* Build configuration list for PBXProject "Crime Beacon Hunt" */;
+			buildConfigurationList = 4439D3B62C240B5700337789 /* Build configuration list for PBXProject "Crime Clues" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -182,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4439D3BA2C240B5700337789 /* Crime Beacon Hunt */,
+				4439D3BA2C240B5700337789 /* Crime Clues */,
 			);
 		};
 /* End PBXProject section */
@@ -378,11 +378,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z5D6XDJ382;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Crime Beacon Hunt/Info.plist";
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Crime Beacon Hunt needs broadcast as a Beacon itself.";
+				INFOPLIST_FILE = "Crime Clues/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Crime Clues needs broadcast as a Beacon itself.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to make a picture of your team!";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We need access to the local network to connect to other devices using Multipeer Connectivity.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Crime Beacon Hunt needs to know where you are.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Crime Clues needs to know where you are.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -393,7 +393,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "one.appstudio.Crime-Beacon-Hunt";
+				PRODUCT_BUNDLE_IDENTIFIER = "one.appstudio.Crime-Clues";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -410,11 +410,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z5D6XDJ382;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Crime Beacon Hunt/Info.plist";
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Crime Beacon Hunt needs broadcast as a Beacon itself.";
+				INFOPLIST_FILE = "Crime Clues/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Crime Clues needs broadcast as a Beacon itself.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to make a picture of your team!";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We need access to the local network to connect to other devices using Multipeer Connectivity.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Crime Beacon Hunt needs to know where you are.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Crime Clues needs to know where you are.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -425,7 +425,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "one.appstudio.Crime-Beacon-Hunt";
+				PRODUCT_BUNDLE_IDENTIFIER = "one.appstudio.Crime-Clues";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -436,7 +436,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4439D3B62C240B5700337789 /* Build configuration list for PBXProject "Crime Beacon Hunt" */ = {
+		4439D3B62C240B5700337789 /* Build configuration list for PBXProject "Crime Clues" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4439D3CD2C240B5800337789 /* Debug */,
@@ -445,7 +445,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4439D3CF2C240B5800337789 /* Build configuration list for PBXNativeTarget "Crime Beacon Hunt" */ = {
+		4439D3CF2C240B5800337789 /* Build configuration list for PBXNativeTarget "Crime Clues" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4439D3D02C240B5800337789 /* Debug */,

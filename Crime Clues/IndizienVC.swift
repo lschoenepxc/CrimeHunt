@@ -34,7 +34,7 @@ class IndizienVC: MainVC {
         //}
 
         // Do any additional setup after loading the view.
-        // tableViewIndizien.delegate = self
+        tableViewIndizien.delegate = self
         tableViewIndizien.dataSource = self
         
         // Erstelle den Balken-View
@@ -101,7 +101,7 @@ extension IndizienVC : UITableViewDataSource {
         return ortIndizien[section].count
     }
     
-    private func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerView = UIView()
         headerView.backgroundColor = .black
@@ -129,10 +129,10 @@ extension IndizienVC : UITableViewDataSource {
     }
 }
 
-/*extension IndizienVC : UITableViewDelegate {
+extension IndizienVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You selected me!")
-        print(indexPath.row)
-        print(indexPath.section)
+        //print("You selected me!")
+        //print(indexPath.row)
+        //print(indexPath.section)
     }
-}*/
+}
