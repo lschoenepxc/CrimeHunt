@@ -40,6 +40,7 @@ struct QuizAnswer {
 struct Ort {
     let ortID: Int
     let name: String
+    let tabCategory: String
     let picture: String
     let quizNo: Int
     let indizien: [String]

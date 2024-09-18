@@ -333,12 +333,13 @@ class MainVC: UIViewController {
                 // TODO: IMPORTANT if any of these will fail, loading will fail completely
                 if let ortID = dict["ortID"] as? Int,
                     let name = dict["name"] as? String,
+                    let tabCategory = dict["tabCategory"] as? String,
                     let picture = dict["picture"] as? String,
                     let quizNo = dict["quizNo"] as? Int,
                     let indizien = dict["indizien"] as? [String],
                     let beaconMajor = dict["beaconMajor"] as? Int,
                     let beaconMinor = dict["beaconMinor"] as? Int {
-                    let ort = Ort(ortID: ortID, name: name, picture: picture, quizNo: quizNo, indizien: indizien, beaconMajor: beaconMajor, beaconMinor: beaconMinor)
+                    let ort = Ort(ortID: ortID, name: name, tabCategory: tabCategory,picture: picture, quizNo: quizNo, indizien: indizien, beaconMajor: beaconMajor, beaconMinor: beaconMinor)
                     orte.append(ort)
                 }
             }

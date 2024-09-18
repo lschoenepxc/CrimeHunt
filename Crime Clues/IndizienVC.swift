@@ -14,7 +14,7 @@ class IndizienVC: MainVC {
     
     var ortIndizien = [[String]]()
     
-    var orteNamen = ["Verdächtige", "Tatwaffen", "Tatorte"]
+    var orteNamen = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class IndizienVC: MainVC {
         if (currentIndex > 0) {
             let count = 0...currentIndex-1
             for index in count {
-                //orteNamen.append(orte![index].name)
+                orteNamen.append(orte![index].tabCategory)
                 ortIndizien.append(orte![index].indizien)
                 print(orteNamen)
             }

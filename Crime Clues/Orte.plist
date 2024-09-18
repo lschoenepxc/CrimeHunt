@@ -9,6 +9,8 @@
 			<integer>0</integer>
 			<key>name</key>
 			<string>Fotostudio</string>
+			<key>tabCategory</key>
+			<string>Verdächtige</string>
 			<key>picture</key>
 			<string>Kamera</string>
 			<key>quizNo</key>
@@ -37,6 +39,8 @@
 			<integer>1</integer>
 			<key>name</key>
 			<string>Schnittplatz</string>
+			<key>tabCategory</key>
+			<string>Tatwaffen</string>
 			<key>picture</key>
 			<string>Schere</string>
 			<key>quizNo</key>
@@ -62,6 +66,8 @@
 			<integer>2</integer>
 			<key>name</key>
 			<string>Audiohörraum</string>
+			<key>tabCategory</key>
+			<string>Tatorte</string>
 			<key>picture</key>
 			<string>Kopfhörer</string>
 			<key>quizNo</key>
