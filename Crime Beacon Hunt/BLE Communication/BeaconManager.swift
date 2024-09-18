@@ -60,8 +60,11 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didRange beacons: [CLBeacon], satisfying beaconConstraint: CLBeaconIdentityConstraint) {
         for beacon in beacons {
             guard let minor = beacon.minor as? UInt16 else { continue }
+            
+            // production ready
             let beaconIndex = minorArray.firstIndex(of: minor) ?? -1
-            //let beaconIndex = currentIndex
+            // for testing with only one beacon use this
+            // let beaconIndex = currentIndex
             if beaconIndex != -1 {
                 delegate?.didUpdateBeaconRange(beacon: beaconIndex, range: beacon.proximity.rawValue)
             }

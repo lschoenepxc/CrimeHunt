@@ -47,42 +47,42 @@ class MainVC: UIViewController {
         
         // Do any additional setup after loading the view.
         
-            // 2.) load questions from file Data
-            if let questions = loadQuestionsFromPlist() {
+        // 2.) load questions from file Data
+        if let questions = loadQuestionsFromPlist() {
                 
-                // uncomment to check loaded data in log
-                /*
-                 for question in questions {
-                 print("Frage: \(question.question)")
-                 print("Antworten: \(question.answers)")
-                 print("Richtig: \(question.correctAnswerIndex)")
-                 }
-                 */
-                
-                self.questions = questions
-            } else {
-                fatalError("Could NOT load Content Dictionary!")
+            // uncomment to check loaded data in log
+            /*
+            for question in questions {
+                print("Frage: \(question.question)")
+                print("Antworten: \(question.answers)")
+                print("Richtig: \(question.correctAnswerIndex)")
             }
+            */
+                
+            self.questions = questions
+        } else {
+            fatalError("Could NOT load Content Dictionary!")
+        }
             
-            // 3.) load orte from file Orte
-            if let orte = loadOrteFromPlist() {
+        // 3.) load orte from file Orte
+        if let orte = loadOrteFromPlist() {
                 
-                // uncomment to check loaded data in log
-                /*
-                 for ort in orte {
-                 print("OrtID: \(ort.ortID)")
-                 print("Name: \(ort.name)")
-                 print("Picture: \(ort.picture)")
-                 print("QuizNo: \(ort.quizNo)")
-                 print("Indizien: \(ort.indizien)")
-                 print("BeaconMajor: \(ort.beaconMajor)")
-                 print("BeaconMinor: \(ort.beaconMinor)")
-                 }
-                 */
-                self.orte = orte
-            } else {
-                fatalError("Could NOT load Content Dictionary!")
+            // uncomment to check loaded data in log
+            /*
+            for ort in orte {
+                print("OrtID: \(ort.ortID)")
+                print("Name: \(ort.name)")
+                print("Picture: \(ort.picture)")
+                print("QuizNo: \(ort.quizNo)")
+                print("Indizien: \(ort.indizien)")
+                print("BeaconMajor: \(ort.beaconMajor)")
+                print("BeaconMinor: \(ort.beaconMinor)")
             }
+            */
+            self.orte = orte
+        } else {
+            fatalError("Could NOT load Content Dictionary!")
+        }
         for ort in self.orte! {
             self.minorArray.append(UInt16(ort.beaconMinor))
         }

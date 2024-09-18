@@ -165,7 +165,7 @@ class FinishViewController: UIViewController {
                 }
             }
         }
-        print(anklageScore)
+        //print(anklageScore)
     }
     
     // MARK: - User Action

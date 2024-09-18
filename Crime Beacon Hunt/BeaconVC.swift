@@ -33,7 +33,7 @@ class BeaconVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //quizButton.isEnabled = false
+        quizButton.isEnabled = false
 
         // Do any additional setup after loading the view.
         numberOfPages = orte!.count
