@@ -90,3 +90,23 @@ struct BeaconSettings {
     let maxiUUID: String = "ACFD065E-C3C0-11E3-9BBE-1A514932AC01"
     let miniUUID: String = "ACFD065E-C3C0-11E3-9BBE-1A514932AC01"
 }
+
+// Funktion zum Verpixeln des Bildes
+func pixelateImage(image: UIImage) -> UIImage? {
+    let inputImage = CIImage(image: image)  // UIImage in CIImage umwandeln
+        
+    // Einen CIFilter erstellen, um den Pixelate-Effekt anzuwenden
+    let filter = CIFilter(name: "CIPixellate")!
+    filter.setValue(inputImage, forKey: kCIInputImageKey)
+        
+    // Pixelgröße einstellen (Je höher der Wert, desto stärker die Verpixelung)
+    filter.setValue(40, forKey: kCIInputScaleKey)
+        
+        // Gefiltertes Bild erzeugen
+    let context = CIContext()
+    if let outputImage = filter.outputImage,
+        let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+        return UIImage(cgImage: cgImage)
+    }
+    return nil
+}

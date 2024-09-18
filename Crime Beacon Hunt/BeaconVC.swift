@@ -117,7 +117,8 @@ class BeaconVC: MainVC {
             }
             else {
                 if let image = UIImage(named: orte![i].picture) {  // Das Bild aus den Assets laden
-                            page.image = pixelateImage(image: image)
+                            // Mehrmaliges Verpixeln für besseres Aussehen
+                            page.image = pixelateImage(image: pixelateImage(image: pixelateImage(image: image)!)!)
                         }
                 //page.image = UIImage(named: "placeholder")
             }
@@ -143,26 +144,6 @@ class BeaconVC: MainVC {
         scrollViewBeacon.contentSize = CGSize(width: scrollViewBeacon.frame.size.width * CGFloat(numberOfPages), height: scrollViewBeacon.frame.size.height)
         scrollViewBeacon.isPagingEnabled = true
     }
-    
-    // Funktion zum Verpixeln des Bildes
-        func pixelateImage(image: UIImage) -> UIImage? {
-            let inputImage = CIImage(image: image)  // UIImage in CIImage umwandeln
-            
-            // Einen CIFilter erstellen, um den Pixelate-Effekt anzuwenden
-            let filter = CIFilter(name: "CIPixellate")!
-            filter.setValue(inputImage, forKey: kCIInputImageKey)
-            
-            // Pixelgröße einstellen (Je höher der Wert, desto stärker die Verpixelung)
-            filter.setValue(80, forKey: kCIInputScaleKey)
-            
-            // Gefiltertes Bild erzeugen
-            let context = CIContext()
-            if let outputImage = filter.outputImage,
-               let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
-                return UIImage(cgImage: cgImage)
-            }
-            return nil
-        }
     
     // MARK: - UI Update Helper
     

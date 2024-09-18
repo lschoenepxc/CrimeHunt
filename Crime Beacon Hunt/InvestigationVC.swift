@@ -21,6 +21,10 @@ class InvestigationVC: UIViewController {
     
     var akte: Akte?
     
+    var verdaechtigeExclude = [false, false, false, false, false]
+    var tatwaffenExclude = [false, false, false, false, false]
+    var tatorteExclude = [false, false, false, false, false]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +116,10 @@ class InvestigationVC: UIViewController {
             // Beschreibung-Label
             let descriptionLabel = UILabel()
             
+            // Ausschließen-Button
+            let excludeButton = UIButton(type: .system)
+            excludeButton.accessibilityIdentifier = "ExcludeButton"
+            
             // Handle different data types
             if let verdaechtiger = data[i] as? Verdaechtiger {
                 imageView.image = UIImage(named: verdaechtiger.pic)
@@ -119,18 +127,21 @@ class InvestigationVC: UIViewController {
                 titleLabel.text = verdaechtiger.name + " | " + verdaechtiger.job
                 descriptionLabel.text = "Mordmotiv - " + verdaechtiger.motiv
                 infoButton.layer.name = "verdaechtiger"
+                excludeButton.layer.name = "verdaechtiger"
             } else if let tatwaffe = data[i] as? Tatwaffe {
                 imageView.image = UIImage(named: tatwaffe.pic) // Assuming an image with weapon name exists
                 pageView.layer.name = tatwaffe.bezeichnung
                 titleLabel.text = tatwaffe.bezeichnung
                 descriptionLabel.text = "Mordmethode - " + tatwaffe.methode
                 infoButton.layer.name = "tatwaffe"
+                excludeButton.layer.name = "tatwaffe"
             } else if let tatort = data[i] as? Tatort {
                 imageView.image = UIImage(named: tatort.pic) // Assuming an image with location name exists
                 pageView.layer.name = tatort.ort
                 titleLabel.text = tatort.ort
                 descriptionLabel.text = tatort.beschreibung
                 infoButton.layer.name = "tatort"
+                excludeButton.layer.name = "tatort"
             }
             
             imageView.frame = CGRect(x: 20, y: 20, width: scrollViewInvestigation.frame.size.width - 40, height: 200)
@@ -142,6 +153,7 @@ class InvestigationVC: UIViewController {
             pageView.addSubview(infoButton)
             
             titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+            titleLabel.textColor = .white
             titleLabel.frame = CGRect(x: 20, y: imageView.frame.maxY + 10, width: scrollViewInvestigation.frame.size.width - 40, height: 25)
             pageView.addSubview(titleLabel)
             
@@ -150,14 +162,13 @@ class InvestigationVC: UIViewController {
             descriptionLabel.frame = CGRect(x: 20, y: titleLabel.frame.maxY + 5, width: scrollViewInvestigation.frame.size.width - 40, height: 20)
             pageView.addSubview(descriptionLabel)
             
-            // Ausschließen-Button
-            let excludeButton = UIButton(type: .system)
             excludeButton.setTitle("Ausschließen", for: .normal)
             excludeButton.backgroundColor = .red
             excludeButton.setTitleColor(.white, for: .normal)
             excludeButton.frame = CGRect(x: 20, y: descriptionLabel.frame.maxY + 10, width: scrollViewInvestigation.frame.size.width - 40, height: 50)
             excludeButton.layer.cornerRadius = 10
-            excludeButton.addTarget(self, action: #selector(excludeButtonTapped), for: .touchUpInside)
+            excludeButton.tag = i
+            excludeButton.addTarget(self, action: #selector(excludeButtonTapped(_:)), for: .touchUpInside)
                     pageView.addSubview(excludeButton)
             
             // Füge den kompletten Container zur ScrollView hinzu
@@ -172,23 +183,111 @@ class InvestigationVC: UIViewController {
     @objc func infoButtonTapped(_ sender: UIButton) {
         let pageIndex = sender.tag  // Hier erhältst du die Seitenzahl/Index
         // (sender.layer.name ?? "No layer name")
+        var title = ""
+        var message = ""
         switch sender.layer.name {
         case "verdaechtiger":
             let info = akte?.verdaechtige[pageIndex]  // Hole die relevante Info basierend auf der Seitenzahl
-            print("Info-Button auf Seite \(pageIndex) wurde gedrückt. Verdächtiger: \(info?.info ?? "Unbekannt")")
+            //print("Info-Button auf Seite \(pageIndex) wurde gedrückt. Verdächtiger: \(info?.info ?? "Unbekannt")")
+            title = info!.name
+            message = info!.info
         case "tatwaffe":
             let info = akte?.tatwaffen[pageIndex]  // Hole die relevante Info basierend auf der Seitenzahl
-            print("Info-Button auf Seite \(pageIndex) wurde gedrückt. Tatwaffe: \(info?.info ?? "Unbekannt")")
+            //print("Info-Button auf Seite \(pageIndex) wurde gedrückt. Tatwaffe: \(info?.info ?? "Unbekannt")")
+            title = info!.bezeichnung
+            message = info!.info
         case "tatort":
             let info = akte?.tatorte[pageIndex]  // Hole die relevante Info basierend auf der Seitenzahl
-            print("Info-Button auf Seite \(pageIndex) wurde gedrückt. Tatort: \(info?.info ?? "Unbekannt")")
+            //print("Info-Button auf Seite \(pageIndex) wurde gedrückt. Tatort: \(info?.info ?? "Unbekannt")")
+            title = info!.ort
+            message = info!.info
         default:
             print("default")
         }
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true)
     }
 
-    @objc func excludeButtonTapped() {
-        print("Ausschließen-Button gedrückt")
+    @objc func excludeButtonTapped(_ sender: UIButton) {
+        let pageIndex = sender.tag
+        let category = sender.layer.name
+        print("Ausschließen-Button gedrückt auf Seite \(pageIndex) im Segment \(String(describing: category))")
+        
+        // flag to check if already excluded
+        var flag = false
+        var pic = ""
+        
+        switch category {
+        case "verdaechtiger":
+            flag = verdaechtigeExclude[pageIndex]
+            verdaechtigeExclude[pageIndex] = !verdaechtigeExclude[pageIndex]
+            pic = akte!.verdaechtige[pageIndex].pic
+        case "tatwaffe":
+            flag = tatwaffenExclude[pageIndex]
+            tatwaffenExclude[pageIndex] = !tatwaffenExclude[pageIndex]
+            pic = akte!.tatwaffen[pageIndex].pic
+        case "tatort":
+            flag = tatorteExclude[pageIndex]
+            tatorteExclude[pageIndex] = !tatorteExclude[pageIndex]
+            pic = akte!.tatorte[pageIndex].pic
+        default:
+            print()
+        }
+        
+        print("Vorher schon excluded: ", flag)
+        
+        // vorher excluded --> jetzt wieder included
+        if flag {
+            // Finde die Seite in der ScrollView
+            let pageWidth = scrollViewInvestigation.frame.size.width
+            let pageX = CGFloat(pageIndex) * pageWidth
+
+            // Durchsuche die Subviews der aktuellen Seite
+            for subview in scrollViewInvestigation.subviews {
+                if subview.frame.origin.x == pageX {  // Überprüfe, ob wir auf der richtigen Seite sind
+                    // Suche nach einem UIImageView in der Seite
+                    for innerSubview in subview.subviews {
+                        if let imageView = innerSubview as? UIImageView{
+                            // Setze das originale Bild in das UIImageView
+                            imageView.image = UIImage(named: pic)
+                        }
+                        
+                        if let excludeButton = innerSubview as? UIButton, excludeButton.accessibilityIdentifier == "ExcludeButton" {
+                            // Dieser Button ist der Exclude-Button (nicht der Info-Button)
+                            excludeButton.setTitle("Ausschließen", for: .normal)
+                        }
+                    }
+                }
+            }
+        }
+        // vorher nicht excluded --> Verpixel das Bild
+        else {
+            // Finde die Seite in der ScrollView
+            let pageWidth = scrollViewInvestigation.frame.size.width
+            let pageX = CGFloat(pageIndex) * pageWidth
+
+            // Durchsuche die Subviews der aktuellen Seite
+            for subview in scrollViewInvestigation.subviews {
+                if subview.frame.origin.x == pageX {  // Überprüfe, ob wir auf der richtigen Seite sind
+                    // Suche nach einem UIImageView in der Seite
+                    for innerSubview in subview.subviews {
+                        if let imageView = innerSubview as? UIImageView,
+                           let originalImage = imageView.image {
+                            // Verpixel das Bild
+                            let pixelatedImage = pixelateImage(image: originalImage)
+                            // Setze das verpixelte Bild in das UIImageView
+                            imageView.image = pixelatedImage
+                        }
+                        
+                        if let excludeButton = innerSubview as? UIButton, excludeButton.accessibilityIdentifier == "ExcludeButton" {
+                            // Dieser Button ist der Exclude-Button (nicht der Info-Button)
+                            excludeButton.setTitle("Verdächtigen", for: .normal)
+                        }
+                    }
+                }
+            }
+        }
     }
 
     
