@@ -12,17 +12,6 @@ class IndizienVC: MainVC {
     
     @IBOutlet weak var tableViewIndizien: UITableView!
     
-    
-    let ort1 = [
-        "Etwas1", "Etwas2", "Etwas3"
-    ]
-    let ort2 = [
-        "Etwas1", "Etwas2", "Etwas3"
-    ]
-    let ort3 = [
-        "Etwas1", "Etwas2", "Etwas3"
-    ]
-    
     var ortIndizien = [[String]]()
     
     var orteNamen = [String]()
@@ -45,7 +34,7 @@ class IndizienVC: MainVC {
         //}
 
         // Do any additional setup after loading the view.
-        tableViewIndizien.delegate = self
+        // tableViewIndizien.delegate = self
         tableViewIndizien.dataSource = self
         
         // Erstelle den Balken-View
@@ -66,6 +55,15 @@ class IndizienVC: MainVC {
             indicatorBar.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 8),
             indicatorBar.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
+        
+        // Enable vertical scroll indicator
+        tableViewIndizien.showsVerticalScrollIndicator = true
+        // Optional: Customize scroll indicator color
+        tableViewIndizien.indicatorStyle = .white
+
+        // Dynamic cell height
+        tableViewIndizien.rowHeight = UITableView.automaticDimension
+        tableViewIndizien.estimatedRowHeight = 44
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -100,24 +98,10 @@ extension IndizienVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //switch section {
-        //case 0:
-        //    return ort1.count
-        //case 1:
-        //    return ort2.count
-        //case 2:
-        //    return ort3.count
-        //default:
-        //    return 0
-        //}
         return ortIndizien[section].count
     }
     
-    //func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //    return orteNamen[section]
-    //}
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    private func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerView = UIView()
         headerView.backgroundColor = .black
@@ -135,28 +119,20 @@ extension IndizienVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewIndizien.dequeueReusableCell(withIdentifier: "indizienCell", for: indexPath)
+        // Einstellungen für das Textlabel
+        cell.textLabel?.numberOfLines = 0 // Erlaubt unbegrenzte Zeilen
+        cell.textLabel?.lineBreakMode = .byWordWrapping // Zeilenumbruch erfolgt bei Wörtern
         cell.textLabel?.textColor = .white
         cell.backgroundColor = .black
-        
-        //switch indexPath.section {
-        //case 0:
-        //    cell.textLabel?.text = ort1[indexPath.row]
-        //case 1:
-        //    cell.textLabel?.text = ort2[indexPath.row]
-        //case 2:
-        //    cell.textLabel?.text = ort3[indexPath.row]
-        //default:
-        //    cell.textLabel?.text = ""
-        //}
         cell.textLabel?.text = ortIndizien[indexPath.section][indexPath.row]
         return cell
     }
 }
 
-extension IndizienVC : UITableViewDelegate {
+/*extension IndizienVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected me!")
         print(indexPath.row)
         print(indexPath.section)
     }
-}
+}*/

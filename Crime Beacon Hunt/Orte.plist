@@ -15,9 +15,17 @@
 			<integer>0</integer>
 			<key>indizien</key>
 			<array>
-				<string>Indiz 1</string>
-				<string>Indiz 2</string>
-				<string>Indiz 3</string>
+				<string>Prof. Dr. Erika Schmidt hat ein Alibi und war zur Tatzeit nicht in der Nähe der Hochschule.</string>
+				<string>Dr. Marc Hoffmann arbeitete zur Tatzeit im Computerlabor 2, sein Alibi wird durch mehrere Zeugen bestätigt.</string>
+				<string>Der Film, der in der Tatnacht gedreht wurde, wurde von Prof. Klein und seiner Assistentin Jana Müller betreut.</string>
+				<string>Jana Müller wurde kurz vor 22 Uhr vor dem Regieraum gesehen, sie behauptet jedoch, sie sei nur kurz da gewesen, um etwas zu holen.</string>
+				<string>Zeugen sahen Jana Müller gegen 22:15 Uhr mit einem Ladekabel zurück ins Videostudio A gehen.</string>
+				<string>Lara Fischer wurde am Abend des Mordes gesehen, wie sie einen schweren Buchband durch das Gebäude trug.</string>
+				<string>Zeugen berichten, dass Lara Fischer den Campus kurz nach 21:30 Uhr Richtung Parkplatz verließ und anschließend weg fuhr.</string>
+				<string>Timm Berger wurde gesehen, als er mit dem Stativ durch den Flur in Richtung Regieraum ging. Er behauptete kurz etwas an dem Stativ prüfen zu wollen.</string>
+				<string>Zeugen hörten kurz nach 22:00 Uhr jemanden in den Regieraum gehen.</string>
+				<string>Zeugen berichten, dass die Stimmen in dem Streit männlich waren und eine definitiv nach der Stimme von Prof. Klein klang.</string>
+				<string>Timm Berger kehrte gegen 23:00 Uhr mit dem Stativ zurück in das Videostudio A.</string>
 			</array>
 			<key>beaconMajor</key>
 			<integer>1</integer>
@@ -28,26 +36,6 @@
 			<key>ortID</key>
 			<integer>1</integer>
 			<key>name</key>
-			<string>Audiohörraum</string>
-			<key>picture</key>
-			<string>Kopfhörer</string>
-			<key>quizNo</key>
-			<integer>1</integer>
-			<key>indizien</key>
-			<array>
-				<string>Indiz 1</string>
-				<string>Indiz 2</string>
-				<string>Indiz 3</string>
-			</array>
-			<key>beaconMajor</key>
-			<integer>1</integer>
-			<key>beaconMinor</key>
-			<integer>25090</integer>
-		</dict>
-		<dict>
-			<key>ortID</key>
-			<integer>2</integer>
-			<key>name</key>
 			<string>Schnittplatz</string>
 			<key>picture</key>
 			<string>Schere</string>
@@ -55,14 +43,44 @@
 			<integer>2</integer>
 			<key>indizien</key>
 			<array>
-				<string>Indiz 1</string>
-				<string>Indiz 2</string>
-				<string>Indiz 3</string>
+				<string>Die Leiche von Professor Klein weist eine schwere blutige Kopfverletzung auf, die auf einen Schlag mit einem stumpfen Gegenstand hinweist.</string>
+				<string>Eine giftige Chemikalie wurde auf der ersten Stock gefunden, es gibt jedoch keine Anzeichen, dass sie mit der Leiche in Kontakt gekommen ist.</string>
+				<string>Das Laptop-Kabel von Professor Klein fehlte auf seinem Schreibtisch.</string>
+				<string>Das Laptop-Kabel von Professor Klein wurde im Videostudio gefunden.</string>
+				<string>Ein schwerer Buchband wurde im Besprechungsraum mit leichten Blutspritzern auf der Rückseite gesehen, doch es gibt keine Anzeichen, dass er direkt als Waffe genutzt wurde.</string>
+				<string>Die Trophäe steht unversehrt an ihrem Platz, allerdings wurde ein leichter Abrieb an der Basis festgestellt, als ob sie kurz verschoben wurde.</string>
+				<string>Ein Stativ wurde aus dem Videostudio entwendet.</string>
+				<string>Das Stativ wurde in der Nacht wiedergefunden, eine Beinverbindung war verbogen, und es waren kleine Spuren von getrocknetem Blut erkennbar.</string>
 			</array>
 			<key>beaconMajor</key>
 			<integer>1</integer>
 			<key>beaconMinor</key>
 			<integer>25088</integer>
+		</dict>
+		<dict>
+			<key>ortID</key>
+			<integer>2</integer>
+			<key>name</key>
+			<string>Audiohörraum</string>
+			<key>picture</key>
+			<string>Kopfhörer</string>
+			<key>quizNo</key>
+			<integer>1</integer>
+			<key>indizien</key>
+			<array>
+				<string>Professor Kleins Büro war in der Tatnacht verschlossen. Auf dem Schreibtisch lag ein Notizzettel \“Termin um 22 Uhr, Regie\“.</string>
+				<string>Das Videostudio A war die ganze Nacht für Dreharbeiten einer Projektgruppe gebucht. Nach einer kurzen Pause fehlte Equipment.</string>
+				<string>Im Computerlabor 2 (Mac) wurden leichte Spuren von Blut am unteren Rand eines Schreibtisches gefunden.</string>
+				<string>Der Besprechungsraum wurde für Catering und eine Besprechungen genutzt. Spuren von Speisen und Getränken wurden gefunden, die jedoch nicht mit dem Mord in Verbindung stehen.</string>
+				<string>Im Regieraum fand ein Treffen um 22 Uhr statt. Danach wurden Flecken auf dem Boden entdeckt, die vorher nicht da waren.</string>
+				<string>Im Regieraum wurde eine zerbrochene Uhr auf dem Boden gefunden, sie zeigt 22:15 Uhr an.</string>
+				<string>Das im Computerlabor 2 (Mac) gefunden Blut stammt von Dr. Hoffmann, der während der Arbeit Nasenbluten hatte.</string>
+				<string>Zeugen berichten, von einem Streit im Regieraum, der von einem lauten Geräusch und anschließendem Stille unterbrochen wurde.</string>
+			</array>
+			<key>beaconMajor</key>
+			<integer>1</integer>
+			<key>beaconMinor</key>
+			<integer>25090</integer>
 		</dict>
 	</array>
 </dict>
