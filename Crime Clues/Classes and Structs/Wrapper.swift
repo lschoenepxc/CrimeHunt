@@ -9,7 +9,7 @@ struct Constants {
     static let appName = "MasterScore" // the Apple TV app
     static let adminName = "Admin" // the Admin app
     // TODO: App Names
-    static let appNames = ["Universe Hunt", "Another", "Careful", "Somehow", "Playful"]
+    static let appNames = ["Universe Hunt", "Crime Clues", "Treasure Hunt", "Bombenentschaerfer"]
     static let messageReceivedNotification = Notification.Name("DeviceDidReceiveMessage")
     static let connectionStateNotification = Notification.Name("DeviceDidChangedConnectionState")
     static let serviceTypeName = "beacon-hunt"
@@ -72,7 +72,7 @@ struct Akte {
 // MARK: - Wrapping Game Data
 // wrapper format, suitable for all Hunts
 struct GameMessage {
-    var app: String = "Crime Beacon Hunt" // distinguish the data for showing all on one screen at AppleTV
+    var app: String = "Crime Clues" // distinguish the data for showing all on one screen at AppleTV
     let teamName: String // name of person/team
     let score: Int // result of person/team
     let image: UIImage // image of person/team
