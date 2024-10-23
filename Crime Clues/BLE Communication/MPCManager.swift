@@ -71,7 +71,7 @@ class MPCManager: NSObject {
         let imageAsData = image.jpegData(compressionQuality: 1.0)!
         
         // TODO: change this to your App name index
-        let message = Message(app: Constants.appNames[0],
+        let message = Message(app: Constants.appNames[1],
                               user: name,
                               score: value,
                               seconds: time,
